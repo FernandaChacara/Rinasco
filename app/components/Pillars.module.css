@@ -1,0 +1,40 @@
+.section {
+  background: var(--ink);
+  padding-block: clamp(6rem, 12vw, 9rem);
+  border-top: 1px solid rgba(244, 238, 224, 0.1);
+}
+
+.grid {
+  display: grid;
+  gap: clamp(2.5rem, 6vw, 4rem);
+}
+
+.item {
+  border-top: 1px solid rgba(244, 238, 224, 0.16);
+  padding-top: 1.75rem;
+}
+
+.roman {
+  font-family: var(--font-display), serif;
+  color: var(--brass-bright);
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.label {
+  margin-bottom: 0.85rem;
+}
+
+.text {
+  color: var(--text-on-dark-muted);
+  line-height: 1.65;
+  max-width: 32ch;
+  font-size: 0.96rem;
+}
+
+@media (min-width: 780px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

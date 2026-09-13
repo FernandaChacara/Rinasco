@@ -1,0 +1,31 @@
+.section {
+  background: var(--ink);
+  padding-block: clamp(6rem, 14vw, 11rem);
+  border-top: 1px solid rgba(244, 238, 224, 0.1);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 3rem;
+}
+
+.quote {
+  font-size: clamp(1.8rem, 4vw, 3.1rem);
+  max-width: 18ch;
+}
+
+.body {
+  max-width: 42rem;
+  font-size: 1.02rem;
+  line-height: 1.75;
+  color: var(--text-on-dark-muted);
+  padding-top: 0.5rem;
+}
+
+@media (min-width: 860px) {
+  .grid {
+    grid-template-columns: 1.1fr 1fr;
+    align-items: start;
+  }
+}

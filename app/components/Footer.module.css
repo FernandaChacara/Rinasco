@@ -1,0 +1,33 @@
+.footer {
+  background: var(--ink-deep);
+  border-top: 1px solid rgba(244, 238, 224, 0.12);
+  padding: 3rem clamp(1.25rem, 5vw, 3rem);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--container);
+  margin-inline: auto;
+}
+
+.mark {
+  font-family: var(--font-display), serif;
+  font-size: 1.05rem;
+}
+
+.epigraph {
+  font-size: 0.82rem;
+  color: var(--text-on-dark-muted);
+  font-style: italic;
+}
+
+.meta {
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-on-dark-muted);
+}
