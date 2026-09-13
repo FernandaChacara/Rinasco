@@ -1,25 +1,26 @@
 :root {
-  /* Quiet-luxury palette: warm neutrals grounded in the real property's own
-     colors (the bedroom wall, the bathroom tile) rather than a regional
-     motif — celadon is a Committed accent, not a "Portuguese tile" motif. */
-  --ink: #ede7d9;
-  --ink-deep: #1b2621;
-  --ink-panel: #e3dcc9;
+  /* Bold-editorial palette: near-black as the primary field so the real
+     photos and oversized type carry the drama; celadon (from the real
+     bedroom wall / bathroom tile) stays as the one Collection accent field
+     rather than a regional motif. */
+  --ink: #0b0b0a;
+  --ink-panel: #161512;
+  --ink-deep: #000000;
   --celadon: #5c7b70;
-  --celadon-deep: #3e564c;
+  --celadon-deep: #2f4a40;
   --celadon-pale: #cbd9d2;
-  --parchment: #f4efe3;
+  --parchment: #f2eee6;
   --parchment-dim: #cfc6ae;
   --paper: var(--celadon-deep);
-  --paper-line: rgba(244, 239, 227, 0.22);
-  --brass: #b0904f;
-  --brass-bright: #d4b06a;
+  --paper-line: rgba(242, 238, 230, 0.18);
+  --brass: #c79a4b;
+  --brass-bright: #e8c077;
   --text-on-dark: var(--parchment);
-  --text-on-dark-muted: rgba(244, 239, 227, 0.64);
-  --text-on-light: #241f1a;
-  --text-on-light-muted: rgba(36, 31, 26, 0.62);
+  --text-on-dark-muted: rgba(242, 238, 230, 0.62);
+  --text-on-light: #14110d;
+  --text-on-light-muted: rgba(20, 17, 13, 0.62);
 
-  --container: 1320px;
+  --container: 1400px;
   --gutter: clamp(1.5rem, 5vw, 5rem);
 
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
@@ -39,7 +40,7 @@ html {
 body {
   min-height: 100%;
   background: var(--ink);
-  color: var(--text-on-light);
+  color: var(--text-on-dark);
   font-family: var(--font-ui), "Archivo", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -72,10 +73,10 @@ svg {
 }
 
 .display {
-  font-family: var(--font-display), "Bodoni Moda", serif;
-  font-weight: 500;
+  font-family: var(--font-display), "Ibarra Real Nova", serif;
+  font-weight: 600;
   letter-spacing: -0.01em;
-  line-height: 1.02;
+  line-height: 0.96;
 }
 
 .rule {

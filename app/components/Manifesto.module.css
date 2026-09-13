@@ -1,8 +1,8 @@
 .section {
   background: var(--ink);
-  color: var(--text-on-light);
+  color: var(--text-on-dark);
   padding-block: clamp(6rem, 14vw, 11rem);
-  border-top: 1px solid rgba(36, 31, 26, 0.1);
+  border-top: 1px solid rgba(242, 238, 230, 0.1);
 }
 
 .grid {
@@ -12,7 +12,7 @@
 }
 
 .quote {
-  font-size: clamp(1.8rem, 4vw, 3.1rem);
+  font-size: clamp(2.4rem, 6vw, 5rem);
   max-width: 18ch;
 }
 
@@ -20,7 +20,7 @@
   max-width: 42rem;
   font-size: 1.02rem;
   line-height: 1.75;
-  color: var(--text-on-light-muted);
+  color: var(--text-on-dark-muted);
   padding-top: 0.5rem;
 }
 

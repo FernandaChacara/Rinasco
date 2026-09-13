@@ -10,7 +10,7 @@
   padding: 1.5rem clamp(1.25rem, 5vw, 3rem);
   background: transparent;
   border-bottom: 1px solid transparent;
-  color: var(--text-on-light);
+  color: var(--text-on-dark);
   /* padding intentionally left out of the transition: animating it forces
      layout on every frame. The size change reads fine as an instant snap
      alongside the animated background/border. */
