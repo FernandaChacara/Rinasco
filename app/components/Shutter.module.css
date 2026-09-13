@@ -1,0 +1,19 @@
+.shutter {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: var(--ink-deep);
+}
+
+:global(html.js) .shutter {
+  display: flex;
+}
+
+.mark {
+  width: clamp(2.75rem, 6vw, 4rem);
+  height: auto;
+  color: var(--brass);
+}

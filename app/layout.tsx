@@ -27,8 +27,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-BR" className={`${display.variable} ${ui.variable}`}>
-      <body>{children}</body>
+    <html
+      lang="pt-BR"
+      className={`${display.variable} ${ui.variable}`}
+      suppressHydrationWarning
+    >
+      <body>
+        {/* Arms the shutter's default-visible CSS the instant this line is
+            parsed — well before React hydrates — so a working browser never
+            paints the raw hero before the intro covers it. No-JS visitors
+            never get this class, so the shutter (display:none by default)
+            never traps them behind it. Static string, no user input. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "document.documentElement.classList.add('js')",
+          }}
+        />
+        {children}
+      </body>
     </html>
   );
 }

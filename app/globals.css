@@ -47,6 +47,11 @@ body {
   overflow-x: hidden;
 }
 
+html.menu-open,
+html.menu-open body {
+  overflow: hidden;
+}
+
 a {
   color: inherit;
 }

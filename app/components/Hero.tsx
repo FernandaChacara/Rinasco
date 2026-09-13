@@ -22,23 +22,9 @@ export function Hero() {
       "(prefers-reduced-motion: reduce)"
     ).matches;
 
+    let removeIntroListener: (() => void) | undefined;
+
     const ctx = gsap.context(() => {
-      if (prefersReducedMotion) return;
-
-      const split = headlineRef.current
-        ? new SplitText(headlineRef.current, { type: "lines", mask: "lines" })
-        : null;
-
-      const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
-      if (split) {
-        tl.from(split.lines, { yPercent: 110, duration: 1, stagger: 0.1 });
-      }
-      tl.from(
-        [`.${styles.kicker}`, `.${styles.sub}`, `.${styles.meta}`, `.${styles.actions}`],
-        { opacity: 0, y: 16, duration: 0.7, ease: "power3.out", stagger: 0.09 },
-        split ? "-=0.55" : 0
-      );
-
       if (imageWrapRef.current) {
         gsap.to(imageWrapRef.current, {
           yPercent: 14,
@@ -51,9 +37,41 @@ export function Hero() {
           },
         });
       }
+
+      if (prefersReducedMotion) return;
+
+      // The Shutter intro covers the hero for its first ~1.2s; wait for it
+      // to hand off so the headline reveal starts exactly as it's uncovered
+      // instead of having already played underneath it.
+      const playIntro = () => {
+        const split = headlineRef.current
+          ? new SplitText(headlineRef.current, { type: "lines", mask: "lines" })
+          : null;
+
+        const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
+        if (split) {
+          tl.from(split.lines, { yPercent: 110, duration: 1, stagger: 0.1 });
+        }
+        tl.from(
+          [`.${styles.kicker}`, `.${styles.sub}`, `.${styles.meta}`, `.${styles.actions}`],
+          { opacity: 0, y: 16, duration: 0.7, ease: "power3.out", stagger: 0.09 },
+          split ? "-=0.55" : 0
+        );
+      };
+
+      if (document.documentElement.classList.contains("intro-done")) {
+        playIntro();
+      } else {
+        window.addEventListener("rinasco:introend", playIntro, { once: true });
+        removeIntroListener = () =>
+          window.removeEventListener("rinasco:introend", playIntro);
+      }
     }, root);
 
-    return () => ctx.revert();
+    return () => {
+      removeIntroListener?.();
+      ctx.revert();
+    };
   }, []);
 
   return (
