@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
@@ -9,10 +9,19 @@ import styles from "./Hero.module.css";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
+const photos = [
+  { src: "/property-01/patio.jpg", alt: "Pátio externo da casa, com jardim de cítricos e área de estar", label: "Pátio" },
+  { src: "/property-01/bedroom.jpg", alt: "Quarto principal, paredes em verde-água e cama em ferro forjado", label: "Quarto" },
+  { src: "/property-01/balcony.jpg", alt: "Varanda com vista para os telhados de telha da vizinhança", label: "Varanda" },
+  { src: "/property-01/bathroom-shower.jpg", alt: "Banheiro com box e ladrilho verde", label: "Banheiro" },
+  { src: "/property-01/bathroom-powder.jpg", alt: "Lavabo com papel de parede dourado", label: "Lavabo" },
+];
+
 export function Hero() {
   const rootRef = useRef<HTMLDivElement>(null);
   const headlineRef = useRef<HTMLHeadingElement>(null);
   const imageWrapRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
     const root = rootRef.current;
@@ -77,37 +86,68 @@ export function Hero() {
   return (
     <section className={styles.hero} ref={rootRef}>
       <div className={styles.stage} ref={imageWrapRef}>
-        <Image
-          src="/property-01/patio.jpg"
-          alt="Pátio externo da casa, com jardim de cítricos e área de estar"
-          fill
-          sizes="100vw"
-          priority
-        />
+        {photos.map((photo, i) => (
+          <Image
+            key={photo.src}
+            src={photo.src}
+            alt={photo.alt}
+            fill
+            sizes="100vw"
+            priority={i === 0}
+            className={styles.stageImage}
+            style={{ opacity: activeIndex === i ? 1 : 0 }}
+          />
+        ))}
       </div>
-      <div className={`container ${styles.content}`}>
-        <p className={`${styles.kicker} kicker`}>
-          <span className="rule" /> Temporada em Portugal
-        </p>
-        <h1 className={`${styles.headline} display`} ref={headlineRef}>
-          A casa, exatamente como ela é.
-        </h1>
-        <p className={styles.sub}>
-          Fotos reais, sem intermediários, para você decidir com clareza
-          antes de reservar — sem surpresa na chegada.
-        </p>
-        <div className={styles.meta}>
-          <span>Portugal</span>
-          <span>Reserva direta</span>
-          <span>Sem intermediários</span>
+
+      <div className={styles.bottomStack}>
+        <div className={`container ${styles.content}`}>
+          <p className={`${styles.kicker} kicker`}>
+            <span className="rule" /> Temporada em Portugal
+          </p>
+          <h1 className={`${styles.headline} display`} ref={headlineRef}>
+            A casa, exatamente como ela é.
+          </h1>
+          <p className={styles.sub}>
+            Fotos reais, sem intermediários, para você decidir com clareza
+            antes de reservar — sem surpresa na chegada.
+          </p>
+          <div className={styles.meta}>
+            <span>Portugal</span>
+            <span>Reserva direta</span>
+            <span>Sem intermediários</span>
+          </div>
+          <div className={styles.actions}>
+            <a className={styles.primary} href="#colecao">
+              Ver a casa disponível
+            </a>
+            <a className={styles.secondary} href="#metodo">
+              Como funciona
+            </a>
+          </div>
         </div>
-        <div className={styles.actions}>
-          <a className={styles.primary} href="#colecao">
-            Ver a casa disponível
-          </a>
-          <a className={styles.secondary} href="#metodo">
-            Como funciona
-          </a>
+
+        <div className={styles.filmstrip}>
+          <div className={`container ${styles.filmstripInner}`}>
+            {photos.map((photo, i) => (
+              <button
+                key={photo.src}
+                type="button"
+                className={styles.filmItem}
+                data-active={activeIndex === i}
+                onClick={() => setActiveIndex(i)}
+              >
+                <span className={styles.filmTitle}>{photo.label}</span>
+                <span className={styles.filmMeta}>Portugal</span>
+              </button>
+            ))}
+          </div>
+          <div className={styles.baseline}>
+            <div
+              className={styles.progress}
+              style={{ transform: `scaleX(${(activeIndex + 1) / photos.length})` }}
+            />
+          </div>
         </div>
       </div>
     </section>

@@ -13,6 +13,7 @@ const links = [
 export function Nav() {
   const [open, setOpen] = useState(false);
   const backdropRef = useRef<HTMLDivElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
   const linkRefs = useRef<HTMLAnchorElement[]>([]);
 
   useEffect(() => {
@@ -26,7 +27,8 @@ export function Nav() {
 
   useEffect(() => {
     const backdrop = backdropRef.current;
-    if (!backdrop) return;
+    const panel = panelRef.current;
+    if (!backdrop || !panel) return;
 
     document.documentElement.classList.toggle("menu-open", open);
 
@@ -36,35 +38,27 @@ export function Nav() {
 
     const ctx = gsap.context(() => {
       if (open) {
-        gsap.set(backdrop, { display: "flex" });
+        gsap.set(backdrop, { display: "block" });
         if (prefersReducedMotion) {
           gsap.set(backdrop, { opacity: 1 });
+          gsap.set(panel, { xPercent: 0 });
           gsap.set(linkRefs.current, { opacity: 1, y: 0 });
           return;
         }
-        gsap.fromTo(
-          backdrop,
-          { opacity: 0 },
-          { opacity: 1, duration: 0.35, ease: "power2.out" }
-        );
+        gsap.fromTo(backdrop, { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power2.out" });
+        gsap.fromTo(panel, { xPercent: -100 }, { xPercent: 0, duration: 0.5, ease: "power4.out" });
         gsap.fromTo(
           linkRefs.current,
-          { opacity: 0, y: 24 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.55,
-            ease: "power3.out",
-            stagger: 0.07,
-            delay: 0.1,
-          }
+          { opacity: 0, y: 16 },
+          { opacity: 1, y: 0, duration: 0.5, ease: "power3.out", stagger: 0.06, delay: 0.15 }
         );
       } else if (prefersReducedMotion) {
         gsap.set(backdrop, { display: "none" });
       } else {
+        gsap.to(panel, { xPercent: -100, duration: 0.4, ease: "power3.in" });
         gsap.to(backdrop, {
           opacity: 0,
-          duration: 0.3,
+          duration: 0.35,
           ease: "power2.in",
           onComplete: () => gsap.set(backdrop, { display: "none" }),
         });
@@ -76,8 +70,6 @@ export function Nav() {
 
   return (
     <header className={styles.nav} data-nav>
-      <span className={styles.mark}>Rinasco</span>
-
       <button
         type="button"
         className={styles.toggle}
@@ -89,29 +81,51 @@ export function Nav() {
           <span className={styles.toggleLine} />
           <span className={styles.toggleLine} />
         </span>
-        <span className={styles.toggleLabel}>{open ? "Fechar" : "Menu"}</span>
       </button>
 
-      <div
-        className={styles.backdrop}
-        id="site-menu"
-        ref={backdropRef}
-        aria-hidden={!open}
-      >
-        <nav className={styles.overlayLinks}>
-          {links.map((link, i) => (
-            <a
-              key={link.href}
-              href={link.href}
-              ref={(el) => {
-                if (el) linkRefs.current[i] = el;
-              }}
+      <span className={styles.mark}>Rinasco</span>
+
+      <a className={styles.utility} href="#contato" aria-label="Falar com a Rinasco">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 6h16v12H4z" stroke="currentColor" strokeWidth="1.4" />
+          <path d="M4 7l8 6 8-6" stroke="currentColor" strokeWidth="1.4" />
+        </svg>
+      </a>
+
+      <div className={styles.backdrop} ref={backdropRef} id="site-menu" aria-hidden={!open}>
+        <div className={styles.panel} ref={panelRef}>
+          <div className={styles.panelHead}>
+            <span className={styles.panelKicker}>Menu</span>
+            <button
+              type="button"
+              className={styles.close}
               onClick={() => setOpen(false)}
+              aria-label="Fechar menu"
             >
-              {link.label}
-            </a>
-          ))}
-        </nav>
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 5l14 14M19 5L5 19" stroke="currentColor" strokeWidth="1.4" />
+              </svg>
+            </button>
+          </div>
+          <nav className={styles.panelLinks}>
+            {links.map((link, i) => (
+              <a
+                key={link.href}
+                href={link.href}
+                ref={(el) => {
+                  if (el) linkRefs.current[i] = el;
+                }}
+                onClick={() => setOpen(false)}
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
+          <div className={styles.panelFoot}>
+            <span>contato@rinasco.com</span>
+            <span>Portugal</span>
+          </div>
+        </div>
       </div>
     </header>
   );

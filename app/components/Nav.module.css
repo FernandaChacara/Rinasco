@@ -1,6 +1,6 @@
 .nav {
   position: fixed;
-  top: 0;
+  top: 0; /* also the positioning context for the centered .mark below */
   left: 0;
   right: 0;
   z-index: 50;
@@ -23,37 +23,48 @@
   backdrop-filter: blur(10px);
   border-bottom-color: rgba(244, 239, 227, 0.12);
   padding-block: 1rem;
-  color: var(--text-on-dark);
 }
 
 .mark {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   font-family: var(--font-display), serif;
-  font-size: 1.2rem;
-  letter-spacing: 0.04em;
+  font-size: 1.1rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
-.toggle {
+.toggle,
+.utility {
   display: flex;
   align-items: center;
-  gap: 0.7rem;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
   background: none;
   border: none;
   color: inherit;
   cursor: pointer;
-  padding: 0.4rem 0.2rem;
+  text-decoration: none;
+}
+
+.utility svg {
+  width: 20px;
+  height: 20px;
 }
 
 .toggleLines {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  width: 22px;
+  width: 20px;
 }
 
 .toggleLine {
   height: 1px;
   background: currentColor;
-  transition: transform 0.25s var(--ease-io), opacity 0.2s var(--ease-io);
+  transition: transform 0.25s var(--ease-io);
 }
 
 .toggleLines[data-open="true"] .toggleLine:first-child {
@@ -64,44 +75,91 @@
   transform: translateY(-3.5px) rotate(-45deg);
 }
 
-.toggleLabel {
-  font-size: 0.68rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-}
-
+/* full-viewport scrim: blurred, not solid, so the page stays visible behind
+   the drawer — matches a left-drawer nav, not a full black takeover */
 .backdrop {
   position: fixed;
   inset: 0;
   z-index: 60;
   display: none;
-  align-items: center;
-  justify-content: center;
-  background: rgba(11, 11, 10, 0.94);
-  backdrop-filter: blur(14px);
   opacity: 0;
+  background: rgba(11, 11, 10, 0.45);
+  backdrop-filter: blur(10px);
 }
 
-.overlayLinks {
+.panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: min(26rem, 86vw);
+  background: rgba(15, 14, 12, 0.92);
+  border-right: 1px solid rgba(244, 238, 224, 0.1);
+  padding: clamp(1.5rem, 4vw, 2.5rem);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: clamp(1.5rem, 4vw, 2.5rem);
 }
 
-.overlayLinks a {
+.panelHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.panelKicker {
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-on-dark-muted);
+}
+
+.close {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close svg {
+  width: 16px;
+  height: 16px;
+}
+
+.panelLinks {
+  margin-top: clamp(2.5rem, 8vh, 4rem);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.25rem, 4vh, 2rem);
+}
+
+.panelLinks a {
   font-family: var(--font-display), serif;
-  font-size: clamp(2rem, 6vw, 3.6rem);
+  font-size: clamp(1.5rem, 3.4vw, 2.1rem);
   text-decoration: none;
   color: var(--text-on-dark);
-  opacity: 0.85;
-  transition: opacity 0.18s var(--ease-io), color 0.18s var(--ease-io);
+  opacity: 0.88;
+  transition: opacity 0.18s var(--ease-io);
 }
 
-.overlayLinks a:last-child {
+.panelLinks a:last-child {
   color: var(--brass-bright);
 }
 
-.overlayLinks a:hover {
+.panelLinks a:hover {
   opacity: 1;
+}
+
+.panelFoot {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: var(--text-on-dark-muted);
 }
