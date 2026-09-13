@@ -4,17 +4,14 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./Collection.module.css";
+import { properties } from "../lib/properties";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const photos = [
-  { src: "/property-01/bedroom.jpg", alt: "Quarto principal, paredes em verde-água e cama em ferro forjado" },
-  { src: "/property-01/patio.jpg", alt: "Pátio externo com jardim de cítricos" },
-  { src: "/property-01/balcony.jpg", alt: "Varanda com vista para os telhados de telha da vizinhança" },
-  { src: "/property-01/bathroom-shower.jpg", alt: "Banheiro com box e ladrilho verde" },
-  { src: "/property-01/bathroom-powder.jpg", alt: "Lavabo com papel de parede dourado" },
-];
+const property = properties[0];
+const photos = property.gallery;
 
 export function Collection() {
   const rootRef = useRef<HTMLElement>(null);
@@ -69,21 +66,16 @@ export function Collection() {
             ))}
           </div>
           <div className={styles.info}>
-            <h3 className={`${styles.name} display`}>Casa de temporada</h3>
-            <p className={styles.desc}>
-              Um quarto com parede em verde-água e cama de ferro forjado, dois
-              banheiros — um em ladrilho verde, outro com um lavabo em papel
-              de parede dourado — varanda com vista para os telhados de telha
-              da vizinhança, e um pátio externo com jardim de cítricos.
-            </p>
+            <h3 className={`${styles.name} display`}>{property.name}</h3>
+            <p className={styles.desc}>{property.description[0]}</p>
             <div className={styles.facts}>
-              <span>Portugal</span>
-              <span>Quartos a confirmar</span>
-              <span>Sob consulta</span>
+              <span>{property.location}</span>
+              <span>{property.tipologia}</span>
+              <span>{property.price}</span>
             </div>
-            <a className={styles.link} href="#contato">
-              Solicitar disponibilidade →
-            </a>
+            <Link className={styles.link} href={`/propriedades/${property.slug}`}>
+              Ver propriedade →
+            </Link>
           </div>
         </div>
       </div>

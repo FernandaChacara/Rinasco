@@ -5,6 +5,7 @@ import gsap from "gsap";
 import styles from "./Nav.module.css";
 
 const links = [
+  { href: "/propriedades", label: "Propriedades" },
   { href: "#colecao", label: "Coleção" },
   { href: "#metodo", label: "Método" },
   { href: "#contato", label: "Solicitar acesso" },
@@ -85,10 +86,10 @@ export function Nav() {
 
       <span className={styles.mark}>Rinasco</span>
 
-      <a className={styles.utility} href="#contato" aria-label="Falar com a Rinasco">
+      <a className={styles.utility} href="/propriedades" aria-label="Ver propriedades">
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M4 6h16v12H4z" stroke="currentColor" strokeWidth="1.4" />
-          <path d="M4 7l8 6 8-6" stroke="currentColor" strokeWidth="1.4" />
+          <circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" strokeWidth="1.4" />
+          <path d="M15.5 15.5L20 20" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
         </svg>
       </a>
 

@@ -1,6 +1,6 @@
 .section {
   background: var(--paper);
-  color: var(--text-on-dark);
+  color: var(--text-on-light);
   padding-block: clamp(6rem, 12vw, 9rem);
 }
 
@@ -13,7 +13,7 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  color: var(--brass-bright);
+  color: var(--brass);
   margin-bottom: 1.25rem;
 }
 
@@ -57,7 +57,7 @@
 
 .desc {
   margin-top: 0.85rem;
-  color: var(--text-on-dark-muted);
+  color: var(--text-on-light-muted);
   line-height: 1.65;
   font-size: 1rem;
 }
@@ -70,7 +70,7 @@
   font-size: 0.7rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--text-on-dark-muted);
+  color: var(--text-on-light-muted);
 }
 
 .link {
@@ -82,7 +82,7 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   text-decoration: none;
-  color: var(--text-on-dark);
+  color: var(--text-on-light);
   border-bottom: 1px solid var(--brass);
   padding-block: 0.95rem 0.15rem;
   width: fit-content;
@@ -90,8 +90,8 @@
 }
 
 .link:hover {
-  color: var(--brass-bright);
-  border-color: var(--brass-bright);
+  color: var(--brass);
+  opacity: 0.75;
 }
 
 @media (min-width: 780px) {

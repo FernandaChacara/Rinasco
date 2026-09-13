@@ -1,24 +1,22 @@
 :root {
-  /* Bold-editorial palette: near-black as the primary field so the real
-     photos and oversized type carry the drama; celadon (from the real
-     bedroom wall / bathroom tile) stays as the one Collection accent field
-     rather than a regional motif. */
-  --ink: #0b0b0a;
-  --ink-panel: #161512;
-  --ink-deep: #000000;
-  --celadon: #5c7b70;
-  --celadon-deep: #2f4a40;
-  --celadon-pale: #cbd9d2;
+  /* Warm coffee-brown as the primary dark field (hero, footer, editorial
+     sections); sand-beige is the one light "content page" field — used by
+     the Collection accent section and the property listing/detail pages. */
+  --ink: #2a211d;
+  --ink-panel: #342922;
+  --ink-deep: #1c1512;
+  --sand: #f2ece3;
+  --sand-dim: #e4dac8;
   --parchment: #f2eee6;
   --parchment-dim: #cfc6ae;
-  --paper: var(--celadon-deep);
-  --paper-line: rgba(242, 238, 230, 0.18);
-  --brass: #c79a4b;
-  --brass-bright: #e8c077;
+  --paper: var(--sand);
+  --paper-line: rgba(42, 33, 29, 0.14);
+  --brass: #c9a87c;
+  --brass-bright: #ddc39c;
   --text-on-dark: var(--parchment);
   --text-on-dark-muted: rgba(242, 238, 230, 0.62);
-  --text-on-light: #14110d;
-  --text-on-light-muted: rgba(20, 17, 13, 0.62);
+  --text-on-light: #2a211d;
+  --text-on-light-muted: rgba(42, 33, 29, 0.62);
 
   --container: 1400px;
   --gutter: clamp(1.5rem, 5vw, 5rem);

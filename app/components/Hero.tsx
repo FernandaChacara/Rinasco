@@ -4,17 +4,19 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./Hero.module.css";
+import { properties } from "../lib/properties";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const photos = [
-  { src: "/property-01/patio.jpg", alt: "Pátio externo da casa, com jardim de cítricos e área de estar", label: "Pátio" },
-  { src: "/property-01/bedroom.jpg", alt: "Quarto principal, paredes em verde-água e cama em ferro forjado", label: "Quarto" },
-  { src: "/property-01/balcony.jpg", alt: "Varanda com vista para os telhados de telha da vizinhança", label: "Varanda" },
-  { src: "/property-01/bathroom-shower.jpg", alt: "Banheiro com box e ladrilho verde", label: "Banheiro" },
-  { src: "/property-01/bathroom-powder.jpg", alt: "Lavabo com papel de parede dourado", label: "Lavabo" },
-];
+// The homepage carousel pages between properties (not between one house's
+// rooms) — each slide is a property's cover photo, name, year and category.
+const photos = properties.map((property) => ({
+  src: property.gallery[0].src,
+  alt: property.gallery[0].alt,
+  property,
+}));
 
 export function Hero() {
   const rootRef = useRef<HTMLDivElement>(null);
@@ -149,16 +151,19 @@ export function Hero() {
       <div className={styles.filmstrip}>
         <div className={`container ${styles.filmstripInner}`} ref={filmstripRef}>
           {photos.map((photo, i) => (
-            <button
-              key={photo.src}
-              type="button"
+            <Link
+              key={photo.property.slug}
+              href={`/propriedades/${photo.property.slug}`}
               className={styles.filmItem}
               data-active={activeIndex === i}
-              onClick={() => setActiveIndex(i)}
+              onMouseEnter={() => setActiveIndex(i)}
+              onFocus={() => setActiveIndex(i)}
             >
-              <span className={styles.filmTitle}>{photo.label}</span>
-              <span className={styles.filmMeta}>Portugal</span>
-            </button>
+              <span className={styles.filmTitle}>{photo.property.name}</span>
+              <span className={styles.filmMeta}>
+                {photo.property.year} · {photo.property.category}
+              </span>
+            </Link>
           ))}
         </div>
         <div className={styles.baseline}>
