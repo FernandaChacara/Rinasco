@@ -2,8 +2,8 @@ import styles from "./Process.module.css";
 
 const steps = [
   {
-    title: "Descubra a coleção",
-    text: "Percorra cada residência em 3D e conheça sua origem antes de entrar em contato.",
+    title: "Descubra a casa",
+    text: "Veja as fotos reais de cada cômodo e entenda o espaço antes de entrar em contato.",
   },
   {
     title: "Consulte a disponibilidade",

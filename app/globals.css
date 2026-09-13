@@ -1,17 +1,23 @@
 :root {
-  --ink: #0e2a21;
-  --ink-deep: #081b15;
-  --ink-panel: #123527;
-  --parchment: #f4eee0;
+  /* Quiet-luxury palette: warm neutrals grounded in the real property's own
+     colors (the bedroom wall, the bathroom tile) rather than a regional
+     motif — celadon is a Committed accent, not a "Portuguese tile" motif. */
+  --ink: #ede7d9;
+  --ink-deep: #1b2621;
+  --ink-panel: #e3dcc9;
+  --celadon: #5c7b70;
+  --celadon-deep: #3e564c;
+  --celadon-pale: #cbd9d2;
+  --parchment: #f4efe3;
   --parchment-dim: #cfc6ae;
-  --paper: #faf6ee;
-  --paper-line: #ddd2b8;
+  --paper: var(--celadon-deep);
+  --paper-line: rgba(244, 239, 227, 0.22);
   --brass: #b0904f;
   --brass-bright: #d4b06a;
   --text-on-dark: var(--parchment);
-  --text-on-dark-muted: rgba(244, 238, 224, 0.62);
-  --text-on-light: var(--ink-deep);
-  --text-on-light-muted: rgba(14, 42, 33, 0.62);
+  --text-on-dark-muted: rgba(244, 239, 227, 0.64);
+  --text-on-light: #241f1a;
+  --text-on-light-muted: rgba(36, 31, 26, 0.62);
 
   --container: 1320px;
   --gutter: clamp(1.5rem, 5vw, 5rem);
@@ -33,7 +39,7 @@ html {
 body {
   min-height: 100%;
   background: var(--ink);
-  color: var(--text-on-dark);
+  color: var(--text-on-light);
   font-family: var(--font-ui), "Archivo", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -118,48 +124,4 @@ svg {
 ::selection {
   background: var(--brass);
   color: var(--ink-deep);
-}
-
-/* Lot progress indicator */
-.lot-progress {
-  position: fixed;
-  right: clamp(1rem, 3vw, 2.25rem);
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 40;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.6rem;
-  font-family: var(--font-ui), sans-serif;
-  font-size: 0.68rem;
-  letter-spacing: 0.14em;
-  color: var(--text-on-dark-muted);
-}
-
-.lot-progress__current {
-  color: var(--brass-bright);
-  font-weight: 600;
-}
-
-.lot-progress__track {
-  position: relative;
-  width: 1px;
-  height: 5.5rem;
-  background: rgba(244, 238, 224, 0.18);
-}
-
-.lot-progress__fill {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: var(--brass);
-  transition: height 0.35s var(--ease-io);
-}
-
-@media (max-width: 860px) {
-  .lot-progress {
-    display: none;
-  }
 }

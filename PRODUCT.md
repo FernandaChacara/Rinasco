@@ -39,7 +39,7 @@ Name and logo are both still open. The user wants an original, single-word name 
 
 ## Evidence on Hand
 
-Real photos of one actual property are on hand, saved at `evidence/property-01/`: `bedroom.jpg`, `bathroom-shower.jpg`, `bathroom-powder.jpg`, `balcony.jpg`, `patio.jpg`. Appears to be a Portuguese property (tiled balcony, terracotta roofs visible from it). More photos exist than were shared. No copy, pricing, or testimonials on hand yet — future work must not fabricate those.
+Real photos of one actual property are on hand, saved at `public/property-01/`: `bedroom.jpg`, `bathroom-shower.jpg`, `bathroom-powder.jpg`, `balcony.jpg`, `patio.jpg`. Appears to be a Portuguese property (tiled balcony, terracotta roofs visible from it). More photos exist than were shared. No copy, pricing, or testimonials on hand yet — future work must not fabricate those.
 
 ## Product Principles
 

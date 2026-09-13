@@ -1,31 +1,12 @@
-import { HouseScene } from "./HouseScene";
+import Image from "next/image";
 import styles from "./Collection.module.css";
 
-const lots = [
-  {
-    number: "002",
-    lot: 2,
-    variant: "glass" as const,
-    name: "Casa Vidro-Sul",
-    desc: "Um pavilhão de vidro e concreto aparente, aberto para uma piscina espelhada que dissolve o limite entre casa e horizonte.",
-    facts: ["Litoral Norte, SP", "4 suítes", "310 m²"],
-  },
-  {
-    number: "003",
-    lot: 3,
-    variant: "stone" as const,
-    name: "Ancoradouro Norte",
-    desc: "Pedra local e madeira escura em uma casa de pescadores reconstruída, a poucos passos de um cais privativo.",
-    facts: ["Costa Verde, RJ", "5 quartos", "Cais próprio"],
-  },
-  {
-    number: "004",
-    lot: 4,
-    variant: "cabin" as const,
-    name: "Refúgio da Serra Alta",
-    desc: "Estrutura em A-frame entre araucárias centenárias, lareira de pedra e uma varanda voltada para o vale.",
-    facts: ["Serra Catarinense", "3 quartos", "Lareira original"],
-  },
+const photos = [
+  { src: "/property-01/bedroom.jpg", alt: "Quarto principal, paredes em verde-água e cama em ferro forjado" },
+  { src: "/property-01/patio.jpg", alt: "Pátio externo com jardim de cítricos" },
+  { src: "/property-01/balcony.jpg", alt: "Varanda com vista para os telhados de telha da vizinhança" },
+  { src: "/property-01/bathroom-shower.jpg", alt: "Banheiro com box e ladrilho verde" },
+  { src: "/property-01/bathroom-powder.jpg", alt: "Lavabo com papel de parede dourado" },
 ];
 
 export function Collection() {
@@ -34,37 +15,39 @@ export function Collection() {
       <div className="container">
         <div className={styles.header}>
           <p className={`${styles.kicker} kicker`} data-reveal>
-            <span className="rule rule--light" /> A coleção atual
+            <span className="rule rule--light" /> Disponível agora
           </p>
           <h2 className={`${styles.title} display`} data-reveal>
-            Três origens, hoje disponíveis
+            Uma casa, hoje disponível em Portugal
           </h2>
         </div>
-        <ul className={styles.list}>
-          {lots.map((item) => (
-            <li key={item.number} className={styles.item} data-lot={item.lot} data-reveal>
-              <span className={styles.number}>Lote nº {item.number}</span>
-              <div className={styles.body}>
-                <div className={styles.mark}>
-                  <HouseScene variant={item.variant} />
-                </div>
-                <div>
-                  <h3 className={`${styles.name} display`}>{item.name}</h3>
-                  <p className={styles.desc}>{item.desc}</p>
-                  <div className={styles.facts}>
-                    {item.facts.map((fact) => (
-                      <span key={fact}>{fact}</span>
-                    ))}
-                    <span>Sob consulta</span>
-                  </div>
-                  <a className={styles.link} href="#contato">
-                    Ver disponibilidade →
-                  </a>
-                </div>
+
+        <div className={styles.property} data-reveal>
+          <div className={styles.gallery}>
+            {photos.map((photo, i) => (
+              <div key={photo.src} className={styles.photo} data-index={i}>
+                <Image src={photo.src} alt={photo.alt} fill sizes="(max-width: 720px) 100vw, 50vw" />
               </div>
-            </li>
-          ))}
-        </ul>
+            ))}
+          </div>
+          <div className={styles.info}>
+            <h3 className={`${styles.name} display`}>Casa de temporada</h3>
+            <p className={styles.desc}>
+              Um quarto com parede em verde-água e cama de ferro forjado, dois
+              banheiros — um em ladrilho verde, outro com um lavabo em papel
+              de parede dourado — varanda com vista para os telhados de telha
+              da vizinhança, e um pátio externo com jardim de cítricos.
+            </p>
+            <div className={styles.facts}>
+              <span>Portugal</span>
+              <span>Quartos a confirmar</span>
+              <span>Sob consulta</span>
+            </div>
+            <a className={styles.link} href="#contato">
+              Solicitar disponibilidade →
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -21,7 +21,7 @@ export default function Home() {
         <Cta />
       </main>
       <Footer />
-      <ScrollFx totalLots={4} />
+      <ScrollFx />
     </>
   );
 }

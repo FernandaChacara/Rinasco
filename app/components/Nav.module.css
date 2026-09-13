@@ -10,17 +10,20 @@
   padding: 1.5rem clamp(1.25rem, 5vw, 3rem);
   background: transparent;
   border-bottom: 1px solid transparent;
+  color: var(--text-on-light);
   /* padding intentionally left out of the transition: animating it forces
      layout on every frame. The size change reads fine as an instant snap
      alongside the animated background/border. */
-  transition: background 0.25s var(--ease-io), border-color 0.25s var(--ease-io);
+  transition: background 0.25s var(--ease-io), border-color 0.25s var(--ease-io),
+    color 0.25s var(--ease-io);
 }
 
 .nav:global(.is-scrolled) {
-  background: rgba(8, 27, 21, 0.86);
+  background: rgba(27, 38, 33, 0.88);
   backdrop-filter: blur(10px);
-  border-bottom-color: rgba(244, 238, 224, 0.1);
+  border-bottom-color: rgba(244, 239, 227, 0.12);
   padding-block: 1rem;
+  color: var(--text-on-dark);
 }
 
 .mark {
@@ -40,12 +43,13 @@
   letter-spacing: 0.16em;
   text-transform: uppercase;
   text-decoration: none;
-  color: var(--text-on-dark-muted);
-  transition: color 0.18s var(--ease-io);
+  color: inherit;
+  opacity: 0.72;
+  transition: opacity 0.18s var(--ease-io);
 }
 
 .link:hover {
-  color: var(--text-on-dark);
+  opacity: 1;
 }
 
 .cta {
@@ -53,7 +57,7 @@
   letter-spacing: 0.14em;
   text-transform: uppercase;
   text-decoration: none;
-  color: var(--text-on-dark);
+  color: inherit;
   border: 1px solid var(--brass);
   padding: 0.65rem 1.3rem;
   transition: background 0.18s var(--ease-io), color 0.18s var(--ease-io);

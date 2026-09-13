@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import { HouseScene } from "./HouseScene";
+import Image from "next/image";
 import styles from "./Hero.module.css";
 
 export function Hero() {
@@ -34,37 +34,41 @@ export function Hero() {
   }, []);
 
   return (
-    <section className={styles.hero} data-lot={1} ref={rootRef}>
+    <section className={styles.hero} ref={rootRef}>
       <div className={`container ${styles.grid}`}>
         <div>
           <p className={`${styles.kicker} kicker`}>
-            <span className="rule" /> Coleção privada — Lote nº 001
+            <span className="rule" /> Temporada em Portugal
           </p>
           <h1 className={`${styles.headline} display`}>
-            Cada casa carrega uma origem que não se repete.
+            A casa, exatamente como ela é.
           </h1>
           <p className={styles.sub}>
-            A Rinasco cataloga residências de caráter raro e as apresenta em
-            um ambiente imersivo em 3D — para quem já sabe reconhecer o que
-            é, de fato, insubstituível.
+            Fotos reais, sem intermediários, para você decidir com clareza
+            antes de reservar — sem surpresa na chegada.
           </p>
           <div className={styles.meta}>
-            <span>Localização reservada</span>
-            <span>6 ambientes</span>
-            <span>Vista permanente</span>
-            <span>Origem 1978</span>
+            <span>Portugal</span>
+            <span>Reserva direta</span>
+            <span>Sem intermediários</span>
           </div>
           <div className={styles.actions}>
-            <a className={styles.primary} href="#contato">
-              Solicitar acesso privado
+            <a className={styles.primary} href="#colecao">
+              Ver a casa disponível
             </a>
             <a className={styles.secondary} href="#metodo">
-              Ver o método
+              Como funciona
             </a>
           </div>
         </div>
         <div className={styles.stage}>
-          <HouseScene variant="flagship" introCamera />
+          <Image
+            src="/property-01/patio.jpg"
+            alt="Pátio externo da casa, com jardim de cítricos e área de estar"
+            fill
+            sizes="(max-width: 900px) 100vw, 55vw"
+            priority
+          />
         </div>
       </div>
     </section>

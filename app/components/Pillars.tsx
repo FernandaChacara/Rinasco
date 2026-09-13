@@ -8,8 +8,8 @@ const pillars = [
   },
   {
     roman: "II",
-    label: "Ambiente 3D",
-    text: "Um passeio imersivo e fiel às proporções reais da casa, disponível antes de qualquer contato ser feito.",
+    label: "Fotos reais",
+    text: "Sem banco de imagens, sem ângulo que esconde o que importa — você vê exatamente os cômodos que vai usar.",
   },
   {
     roman: "III",

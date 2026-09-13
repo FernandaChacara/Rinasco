@@ -10,7 +10,7 @@ export function Cta() {
     <section className={styles.section} id="contato">
       <div className="container">
         <h2 className={`${styles.title} display`} data-reveal>
-          Poucas origens. Nenhuma repetição.
+          Fale direto com quem cuida da casa.
         </h2>
         <p className={styles.sub} data-reveal>
           Deixe seus dados e um interlocutor da Rinasco entra em contato para

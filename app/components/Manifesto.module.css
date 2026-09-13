@@ -1,7 +1,8 @@
 .section {
   background: var(--ink);
+  color: var(--text-on-light);
   padding-block: clamp(6rem, 14vw, 11rem);
-  border-top: 1px solid rgba(244, 238, 224, 0.1);
+  border-top: 1px solid rgba(36, 31, 26, 0.1);
 }
 
 .grid {
@@ -19,7 +20,7 @@
   max-width: 42rem;
   font-size: 1.02rem;
   line-height: 1.75;
-  color: var(--text-on-dark-muted);
+  color: var(--text-on-light-muted);
   padding-top: 0.5rem;
 }
 

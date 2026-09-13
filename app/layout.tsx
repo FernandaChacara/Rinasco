@@ -1,24 +1,24 @@
 import type { Metadata } from "next";
-import { Bodoni_Moda, Archivo } from "next/font/google";
+import { Ibarra_Real_Nova, Manrope } from "next/font/google";
 import "./globals.css";
 
-const display = Bodoni_Moda({
+const display = Ibarra_Real_Nova({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: ["500", "600"],
+  weight: ["500", "600", "700"],
   style: ["normal", "italic"],
 });
 
-const ui = Archivo({
+const ui = Manrope({
   variable: "--font-ui",
   subsets: ["latin"],
   weight: ["400", "500", "600"],
 });
 
 export const metadata: Metadata = {
-  title: "Rinasco — Origem Única",
+  title: "Rinasco",
   description:
-    "Rinasco cataloga residências de caráter raro e as apresenta em um ambiente imersivo em 3D, para quem já sabe reconhecer o que é insubstituível.",
+    "Casas de temporada em Portugal, apresentadas com a mesma clareza de uma boa estadia: sem ruído, sem exagero, só o essencial de cada espaço.",
 };
 
 export default function RootLayout({

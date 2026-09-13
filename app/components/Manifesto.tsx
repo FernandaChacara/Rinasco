@@ -6,15 +6,14 @@ export function Manifesto() {
       <div className="container">
         <div className={styles.grid}>
           <h2 className={`${styles.quote} display`} data-reveal>
-            Não vendemos estadias. Preservamos origens.
+            O que você vê é o que você encontra.
           </h2>
           <p className={styles.body} data-reveal>
-            Cada residência da coleção é escolhida por seu caráter, não por
-            sua disponibilidade. Antes de qualquer contato, você percorre o
-            imóvel em um ambiente 3D fiel às suas proporções e à sua luz —
-            porque decidir à distância não deveria significar decidir no
-            escuro. O que muda daqui para frente é o padrão que você passa a
-            esperar de uma locação de temporada.
+            Cada casa é fotografada como ela realmente é — sem edição que
+            prometa mais do que existe. Você vê os cômodos, a luz, os
+            detalhes, e fala diretamente com quem cuida do imóvel, sem
+            agência no meio. O que muda daqui para frente é o padrão que
+            você passa a esperar de uma locação de temporada.
           </p>
         </div>
       </div>
