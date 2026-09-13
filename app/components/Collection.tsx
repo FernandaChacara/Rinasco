@@ -1,4 +1,4 @@
-import { Elevation } from "./Elevation";
+import { HouseScene } from "./HouseScene";
 import styles from "./Collection.module.css";
 
 const lots = [
@@ -45,7 +45,9 @@ export function Collection() {
             <li key={item.number} className={styles.item} data-lot={item.lot} data-reveal>
               <span className={styles.number}>Lote nº {item.number}</span>
               <div className={styles.body}>
-                <Elevation variant={item.variant} className={styles.mark} />
+                <div className={styles.mark}>
+                  <HouseScene variant={item.variant} />
+                </div>
                 <div>
                   <h3 className={`${styles.name} display`}>{item.name}</h3>
                   <p className={styles.desc}>{item.desc}</p>

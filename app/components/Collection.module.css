@@ -50,8 +50,14 @@
 
 .mark {
   width: 100%;
-  max-width: 220px;
+  max-width: 320px;
+  aspect-ratio: 4 / 3;
   color: var(--ink-deep);
+  cursor: grab;
+}
+
+.mark:active {
+  cursor: grabbing;
 }
 
 .name {
@@ -100,7 +106,7 @@
 
 @media (min-width: 720px) {
   .body {
-    grid-template-columns: auto 1fr;
+    grid-template-columns: min(320px, 34%) 1fr;
     gap: clamp(2rem, 5vw, 4rem);
   }
 }
