@@ -5,16 +5,14 @@ const columns = [
   {
     heading: "Índice",
     links: [
-      { href: "/propriedades", label: "Propriedades" },
-      { href: "#metodo", label: "Estúdio" },
-      { href: "#metodo", label: "Processo" },
-      { href: "#contato", label: "Serviços" },
-      { href: "#contato", label: "Imprensa" },
+      { href: "/propriedades", label: "Casas" },
+      { href: "#contato", label: "Sobre" },
+      { href: "#contato", label: "Processo" },
       { href: "#contato", label: "Contacto" },
     ],
   },
   {
-    heading: "Estúdio",
+    heading: "Sede",
     links: [{ href: "#contato", label: "Portugal" }, { href: "#contato", label: "Apenas com marcação" }],
   },
   {
@@ -31,9 +29,9 @@ export function Footer() {
   return (
     <footer className={styles.footer}>
       <div className="container">
-        <p className={`${styles.kicker} kicker`}>Começar um projeto</p>
+        <p className={`${styles.kicker} kicker`}>Começar</p>
         <a href="#contato" className={`${styles.headline} display`}>
-          Conte-nos sobre a sua propriedade →
+          Conte-nos sobre a sua casa →
         </a>
 
         <div className={styles.columns}>

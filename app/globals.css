@@ -2,21 +2,21 @@
   /* Warm coffee-brown as the primary dark field (hero, footer, editorial
      sections); sand-beige is the one light "content page" field — used by
      the Collection accent section and the property listing/detail pages. */
-  --ink: #2a211d;
-  --ink-panel: #342922;
-  --ink-deep: #1c1512;
+  --ink: #221a16;
+  --ink-panel: #2c221c;
+  --ink-deep: #17110e;
   --sand: #f2ece3;
   --sand-dim: #e4dac8;
-  --parchment: #f2eee6;
+  --parchment: #f2ece3;
   --parchment-dim: #cfc6ae;
   --paper: var(--sand);
-  --paper-line: rgba(42, 33, 29, 0.14);
+  --paper-line: rgba(34, 26, 22, 0.14);
   --brass: #c9a87c;
   --brass-bright: #ddc39c;
   --text-on-dark: var(--parchment);
-  --text-on-dark-muted: rgba(242, 238, 230, 0.62);
-  --text-on-light: #2a211d;
-  --text-on-light-muted: rgba(42, 33, 29, 0.62);
+  --text-on-dark-muted: rgba(242, 236, 227, 0.62);
+  --text-on-light: #221a16;
+  --text-on-light-muted: rgba(34, 26, 22, 0.62);
 
   --container: 1400px;
   --gutter: clamp(1.5rem, 5vw, 5rem);
@@ -76,8 +76,8 @@ svg {
 }
 
 .display {
-  font-family: var(--font-display), "Ibarra Real Nova", serif;
-  font-weight: 600;
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 500;
   letter-spacing: -0.01em;
   line-height: 0.96;
 }

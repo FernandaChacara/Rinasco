@@ -125,6 +125,8 @@ export function Hero() {
     };
   }, []);
 
+  const active = photos[activeIndex].property;
+
   return (
     <section className={styles.hero} ref={rootRef}>
       <div
@@ -132,7 +134,7 @@ export function Hero() {
         ref={imageWrapRef}
         tabIndex={0}
         role="group"
-        aria-label="Fotos da casa, arraste ou use as setas para navegar"
+        aria-label="Propriedades, arraste ou use as setas para navegar"
       >
         {photos.map((photo, i) => (
           <Image
@@ -148,22 +150,28 @@ export function Hero() {
         ))}
       </div>
 
+      <Link href={`/propriedades/${active.slug}`} className={styles.featured}>
+        <span className={`${styles.featuredName} display`}>{active.name}</span>
+        <span className={styles.featuredMeta}>
+          {active.year} · {active.category}
+        </span>
+      </Link>
+
       <div className={styles.filmstrip}>
         <div className={`container ${styles.filmstripInner}`} ref={filmstripRef}>
           {photos.map((photo, i) => (
-            <Link
+            <button
               key={photo.property.slug}
-              href={`/propriedades/${photo.property.slug}`}
+              type="button"
               className={styles.filmItem}
               data-active={activeIndex === i}
-              onMouseEnter={() => setActiveIndex(i)}
-              onFocus={() => setActiveIndex(i)}
+              onClick={() => setActiveIndex(i)}
             >
               <span className={styles.filmTitle}>{photo.property.name}</span>
               <span className={styles.filmMeta}>
                 {photo.property.year} · {photo.property.category}
               </span>
-            </Link>
+            </button>
           ))}
         </div>
         <div className={styles.baseline}>

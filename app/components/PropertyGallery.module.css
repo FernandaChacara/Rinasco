@@ -1,13 +1,6 @@
-.gallery {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
 .stage {
   position: relative;
-  flex: 1;
-  min-height: 60vh;
+  height: 100dvh;
   background: var(--ink-deep);
 }
 
@@ -18,12 +11,13 @@
 
 .arrow {
   position: absolute;
+  z-index: 2;
   top: 50%;
   transform: translateY(-50%);
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
-  border: 1px solid rgba(242, 238, 230, 0.4);
+  border: 1px solid rgba(244, 239, 227, 0.4);
   background: rgba(20, 16, 13, 0.35);
   color: var(--text-on-dark);
   font-size: 1rem;
@@ -43,34 +37,37 @@
   right: clamp(1rem, 3vw, 2rem);
 }
 
-.counter {
+/* thumbnails, counter — overlaid on the bottom edge of the full-bleed
+   photo itself, never a separate row that shrinks the image */
+.overlayBottom {
   position: absolute;
-  bottom: clamp(1rem, 3vw, 1.75rem);
-  right: clamp(1rem, 3vw, 2rem);
-  font-size: 0.72rem;
-  letter-spacing: 0.1em;
-  color: var(--text-on-dark);
-  background: rgba(20, 16, 13, 0.4);
-  padding: 0.35rem 0.7rem;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: clamp(1rem, 3vw, 1.75rem);
+  background: linear-gradient(180deg, transparent 0%, rgba(20, 16, 13, 0.55) 100%);
 }
 
 .thumbs {
   display: flex;
-  gap: 0.6rem;
-  padding: 0.9rem clamp(1rem, 3vw, 2rem);
-  background: var(--ink-deep);
+  gap: 0.5rem;
   overflow-x: auto;
 }
 
 .thumb {
   position: relative;
   flex: none;
-  width: 4.5rem;
+  width: 4rem;
   aspect-ratio: 4 / 3;
-  border: none;
+  border: 1px solid rgba(244, 239, 227, 0.5);
   padding: 0;
   cursor: pointer;
-  opacity: 0.45;
+  opacity: 0.55;
   transition: opacity 0.2s var(--ease-io);
 }
 
@@ -80,8 +77,22 @@
 
 .thumb[data-active="true"] {
   opacity: 1;
+  border-color: var(--brass-bright);
 }
 
 .thumb:hover {
-  opacity: 0.8;
+  opacity: 0.85;
+}
+
+.counter {
+  flex: none;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: var(--text-on-dark);
+}
+
+@media (max-width: 900px) {
+  .stage {
+    height: 60vh;
+  }
 }

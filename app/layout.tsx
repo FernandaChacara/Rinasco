@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
-import { Ibarra_Real_Nova, Manrope } from "next/font/google";
+import { Fraunces, Manrope } from "next/font/google";
 import "./globals.css";
 
-const display = Ibarra_Real_Nova({
+const display = Fraunces({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
+  weight: "variable",
   style: ["normal", "italic"],
+  axes: ["opsz"],
 });
 
 const ui = Manrope({

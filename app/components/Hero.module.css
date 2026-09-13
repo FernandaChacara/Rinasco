@@ -40,8 +40,35 @@
   transition: opacity 0.6s ease;
 }
 
-/* filmstrip: the only text overlay on the hero — a scrollable strip of the
-   property's photos with a thin progress hairline underneath */
+/* the currently-active property's name, overlaid directly on the photo,
+   bottom-left — distinct from the filmstrip below, which lists every
+   property and never carries this much text itself */
+.featured {
+  position: absolute;
+  z-index: 1;
+  left: var(--gutter);
+  bottom: clamp(7.5rem, 17vh, 10.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  color: var(--text-on-dark);
+  text-decoration: none;
+  max-width: 70vw;
+}
+
+.featuredName {
+  font-size: clamp(1.4rem, 3.4vw, 2.4rem);
+}
+
+.featuredMeta {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-on-dark-muted);
+}
+
+/* filmstrip: a scrollable strip of every property with a thin progress
+   hairline underneath, anchored to the very bottom of the hero */
 .filmstrip {
   position: relative;
   z-index: 1;
@@ -62,8 +89,9 @@
 
 .filmItem {
   flex: none;
+  background: none;
+  border: none;
   color: inherit;
-  text-decoration: none;
   cursor: pointer;
   text-align: left;
   display: flex;
