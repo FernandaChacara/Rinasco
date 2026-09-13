@@ -8,43 +8,41 @@ web
 
 ## Stack
 
-delegated: Next.js (React) — chosen for a production rental site that needs server-rendered pages for property listings and SEO, straightforward payment integration (e.g. Stripe), and a component/business-logic base that can later extend to React Native for the planned iOS/Android apps. The user deferred the specific framework choice to this build.
+delegated: Next.js (React) — already scaffolded and in place. Kept as-is on this reset; the product interview was redone, the stack was not reopened.
 
 ## Users
 
-Primary users are people looking to rent a house — initially for vacation stays, with the same product expected to later support long-term/residential rentals. They need to check a property's availability, contact the owner/manager, and be able to pay for the booking directly on the site.
+People who want to rent a house for a vacation stay in Portugal. They want an accommodation that reads as luxury and premium — a place to relax and enjoy — and they want the surrounding process to get out of their way: less bureaucracy to rent, an easy way to contact the owner, and a real way to see the house before committing.
 
 ## Product Purpose
 
-Rinasco lets a property owner/manager list rental houses and lets renters browse them, see availability, get in touch, and complete payment online — collapsing the usual multi-step rental inquiry (browse → call → negotiate → pay offline) into one flow.
+Let a guest search for a house by the destination they want to go to, see the real property in an interactive 3D walkthrough — able to move through it and look around each room, like an interactive video rather than a photo gallery — check real availability, and pay for the stay, all on the site.
 
 ## Positioning
 
-Presents each property inside a 3D environment that conveys a premium, high-end feel, rather than the static photo galleries competitors typically use — meant to make the space and the brand feel premium before the visitor ever makes contact.
+The site replaces the usual "browse photos, then message the owner and hope" flow with a real interactive 3D walkthrough of the actual property, so the guest already knows the space before any contact happens. Differentiator is fidelity: the 3D experience represents the real house, not a generic stand-in.
 
 ## Operating Context
 
-- Vacation-rental use case first; long-term/residential rental support is a stated future direction, not yet in scope for this build.
-- Core booking flow: browse properties, view availability, contact, and pay on-site.
-- A 3D presentation of each property is a core part of the experience, not a decorative add-on.
+- Vacation-rental use case in Portugal.
+- Core flow: search by destination → walk through the real property in 3D → check availability → pay, on-site.
+- The 3D walkthrough is meant to feel like an interactive video of the actual rooms, not an abstract or stylized representation — this is a materially different bar than a decorative 3D illustration.
 
 ## Capabilities and Constraints
 
-- Confirmed: availability display, contact mechanism, on-site payment, 3D property visualization.
-- Future (explicitly out of scope for now): native iOS and Android apps, once the web site is real and functional.
-- Undecided: payment provider, number of properties/owners, whether this is a single-owner site or a multi-owner marketplace.
+- Confirmed: search by destination, interactive room-by-room 3D walkthrough of the real property, availability display, on-site payment.
+- Undecided: how the 3D walkthrough gets produced (e.g. a 360°/scan-based capture vs. another technique) — the product requirement is confirmed, the production method is not yet decided and needs real capture material (photos alone are evidence of the space, not a walkthrough by themselves); payment provider; number of properties/owners; single-owner vs. multi-owner marketplace.
 
 ## Brand Commitments
 
-"Rinasco" is a working name only — the user is open to changing it to something more premium. No logo, existing visual assets, or locked identity yet.
+Name and logo are both still open. The user wants an original, single-word name with a premium, simple, luxury feel — not attached to "Rinasco," which was only ever a placeholder. `igcgallery` was named as a reference for the visual vibe being aimed for (referenced verbally, not yet reviewed by Claude).
 
 ## Evidence on Hand
 
-None yet — no real property data, photos, copy, or testimonials exist. Future work must not fabricate listings, prices, or reviews; use clearly marked placeholder content until real data is provided.
+Real photos of one actual property are on hand, saved at `evidence/property-01/`: `bedroom.jpg`, `bathroom-shower.jpg`, `bathroom-powder.jpg`, `balcony.jpg`, `patio.jpg`. Appears to be a Portuguese property (tiled balcony, terracotta roofs visible from it). More photos exist than were shared. No copy, pricing, or testimonials on hand yet — future work must not fabricate those.
 
 ## Product Principles
 
-1. Every property should feel premium and trustworthy at first glance — the 3D presentation is central to that, not an add-on.
-2. Reduce the booking flow to browse → see availability → contact/pay, with no offline detour required.
-3. Build for the vacation-rental case now without foreclosing an extension to long-term rentals later.
-4. Keep the web product and the future native apps sharing product logic where reasonable, since both are committed.
+1. The 3D walkthrough is the product's core proof, not decoration — it has to represent the real house.
+2. Strip friction from the whole path: find by destination, see it for real, check dates, pay — no offline detour.
+3. Premium has to be legible immediately, through real material (the actual property) rather than invented polish.
