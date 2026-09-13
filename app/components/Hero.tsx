@@ -3,11 +3,10 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { SplitText } from "gsap/SplitText";
 import Image from "next/image";
 import styles from "./Hero.module.css";
 
-gsap.registerPlugin(ScrollTrigger, SplitText);
+gsap.registerPlugin(ScrollTrigger);
 
 const photos = [
   { src: "/property-01/patio.jpg", alt: "Pátio externo da casa, com jardim de cítricos e área de estar", label: "Pátio" },
@@ -19,10 +18,14 @@ const photos = [
 
 export function Hero() {
   const rootRef = useRef<HTMLDivElement>(null);
-  const headlineRef = useRef<HTMLHeadingElement>(null);
+  const filmstripRef = useRef<HTMLDivElement>(null);
   const imageWrapRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const activeIndexRef = useRef(0);
+  activeIndexRef.current = activeIndex;
 
+  // Parallax + shutter handoff: unrelated to the paging gesture below, so it
+  // stays in its own effect with an empty dep array.
   useEffect(() => {
     const root = rootRef.current;
     if (!root) return;
@@ -50,22 +53,16 @@ export function Hero() {
       if (prefersReducedMotion) return;
 
       // The Shutter intro covers the hero for its first ~1.2s; wait for it
-      // to hand off so the headline reveal starts exactly as it's uncovered
-      // instead of having already played underneath it.
+      // to hand off so the filmstrip fades in exactly as it's uncovered.
       const playIntro = () => {
-        const split = headlineRef.current
-          ? new SplitText(headlineRef.current, { type: "lines", mask: "lines" })
-          : null;
-
-        const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
-        if (split) {
-          tl.from(split.lines, { yPercent: 110, duration: 1, stagger: 0.1 });
-        }
-        tl.from(
-          [`.${styles.kicker}`, `.${styles.sub}`, `.${styles.meta}`, `.${styles.actions}`],
-          { opacity: 0, y: 16, duration: 0.7, ease: "power3.out", stagger: 0.09 },
-          split ? "-=0.55" : 0
-        );
+        if (!filmstripRef.current) return;
+        gsap.from(filmstripRef.current.children, {
+          opacity: 0,
+          y: 12,
+          duration: 0.6,
+          ease: "power3.out",
+          stagger: 0.05,
+        });
       };
 
       if (document.documentElement.classList.contains("intro-done")) {
@@ -83,9 +80,58 @@ export function Hero() {
     };
   }, []);
 
+  // Browsing the photos is a drag (mouse or touch) or the arrow keys on the
+  // stage — the same mechanic as the reference site's carousel. The page's
+  // own scroll is never intercepted; dragging is purely horizontal.
+  useEffect(() => {
+    const stage = imageWrapRef.current;
+    if (!stage) return;
+
+    const go = (direction: 1 | -1) => {
+      const next = activeIndexRef.current + direction;
+      if (next < 0 || next > photos.length - 1) return;
+      setActiveIndex(next);
+    };
+
+    let dragging = false;
+    let startX = 0;
+
+    const onPointerDown = (e: PointerEvent) => {
+      dragging = true;
+      startX = e.clientX;
+      stage.setPointerCapture(e.pointerId);
+    };
+    const onPointerUp = (e: PointerEvent) => {
+      if (!dragging) return;
+      dragging = false;
+      const dx = e.clientX - startX;
+      if (Math.abs(dx) < 40) return;
+      go(dx < 0 ? 1 : -1);
+    };
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "ArrowRight") go(1);
+      else if (e.key === "ArrowLeft") go(-1);
+    };
+
+    stage.addEventListener("pointerdown", onPointerDown);
+    stage.addEventListener("pointerup", onPointerUp);
+    stage.addEventListener("keydown", onKeyDown);
+    return () => {
+      stage.removeEventListener("pointerdown", onPointerDown);
+      stage.removeEventListener("pointerup", onPointerUp);
+      stage.removeEventListener("keydown", onKeyDown);
+    };
+  }, []);
+
   return (
     <section className={styles.hero} ref={rootRef}>
-      <div className={styles.stage} ref={imageWrapRef}>
+      <div
+        className={styles.stage}
+        ref={imageWrapRef}
+        tabIndex={0}
+        role="group"
+        aria-label="Fotos da casa, arraste ou use as setas para navegar"
+      >
         {photos.map((photo, i) => (
           <Image
             key={photo.src}
@@ -100,54 +146,26 @@ export function Hero() {
         ))}
       </div>
 
-      <div className={styles.bottomStack}>
-        <div className={`container ${styles.content}`}>
-          <p className={`${styles.kicker} kicker`}>
-            <span className="rule" /> Temporada em Portugal
-          </p>
-          <h1 className={`${styles.headline} display`} ref={headlineRef}>
-            A casa, exatamente como ela é.
-          </h1>
-          <p className={styles.sub}>
-            Fotos reais, sem intermediários, para você decidir com clareza
-            antes de reservar — sem surpresa na chegada.
-          </p>
-          <div className={styles.meta}>
-            <span>Portugal</span>
-            <span>Reserva direta</span>
-            <span>Sem intermediários</span>
-          </div>
-          <div className={styles.actions}>
-            <a className={styles.primary} href="#colecao">
-              Ver a casa disponível
-            </a>
-            <a className={styles.secondary} href="#metodo">
-              Como funciona
-            </a>
-          </div>
+      <div className={styles.filmstrip}>
+        <div className={`container ${styles.filmstripInner}`} ref={filmstripRef}>
+          {photos.map((photo, i) => (
+            <button
+              key={photo.src}
+              type="button"
+              className={styles.filmItem}
+              data-active={activeIndex === i}
+              onClick={() => setActiveIndex(i)}
+            >
+              <span className={styles.filmTitle}>{photo.label}</span>
+              <span className={styles.filmMeta}>Portugal</span>
+            </button>
+          ))}
         </div>
-
-        <div className={styles.filmstrip}>
-          <div className={`container ${styles.filmstripInner}`}>
-            {photos.map((photo, i) => (
-              <button
-                key={photo.src}
-                type="button"
-                className={styles.filmItem}
-                data-active={activeIndex === i}
-                onClick={() => setActiveIndex(i)}
-              >
-                <span className={styles.filmTitle}>{photo.label}</span>
-                <span className={styles.filmMeta}>Portugal</span>
-              </button>
-            ))}
-          </div>
-          <div className={styles.baseline}>
-            <div
-              className={styles.progress}
-              style={{ transform: `scaleX(${(activeIndex + 1) / photos.length})` }}
-            />
-          </div>
+        <div className={styles.baseline}>
+          <div
+            className={styles.progress}
+            style={{ transform: `scaleX(${(activeIndex + 1) / photos.length})` }}
+          />
         </div>
       </div>
     </section>
