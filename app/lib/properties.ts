@@ -22,8 +22,8 @@ export type Property = {
 
 export const properties: Property[] = [
   {
-    slug: "casa-do-patio",
-    name: "Casa do Pátio",
+    slug: "casa-caparica",
+    name: "Casa Caparica",
     year: "2024",
     category: "Residencial",
     status: "Disponível",
