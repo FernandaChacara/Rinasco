@@ -47,7 +47,7 @@
   color: var(--text-on-dark);
   font-family: var(--font-ui), sans-serif;
   font-size: 0.95rem;
-  transition: border-color 0.3s var(--ease);
+  transition: border-color 0.18s var(--ease-io);
 }
 
 .field input:focus,
@@ -67,7 +67,7 @@
   border: none;
   padding: 0.95rem 2.4rem;
   cursor: pointer;
-  transition: background 0.3s var(--ease);
+  transition: background 0.18s var(--ease-io);
 }
 
 .submit:hover {

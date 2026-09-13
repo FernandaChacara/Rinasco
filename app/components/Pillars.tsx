@@ -22,6 +22,14 @@ export function Pillars() {
   return (
     <section className={styles.section}>
       <div className="container">
+        <div className={styles.header}>
+          <p className={`${styles.kicker} kicker`} data-reveal>
+            <span className="rule" /> O padrão Rinasco
+          </p>
+          <h2 className={`${styles.title} display`} data-reveal>
+            Três compromissos, sempre visíveis
+          </h2>
+        </div>
         <div className={styles.grid}>
           {pillars.map((p) => (
             <div key={p.roman} className={styles.item} data-reveal>

@@ -81,7 +81,7 @@
   color: var(--ink-deep);
   background: var(--brass);
   padding: 0.95rem 1.9rem;
-  transition: background 0.3s var(--ease);
+  transition: background 0.18s var(--ease-io);
 }
 
 .primary:hover {
@@ -89,14 +89,15 @@
 }
 
 .secondary {
+  display: inline-block;
   font-size: 0.72rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   text-decoration: none;
   color: var(--text-on-dark-muted);
   border-bottom: 1px solid rgba(244, 238, 224, 0.3);
-  padding-bottom: 0.2rem;
-  transition: color 0.3s var(--ease), border-color 0.3s var(--ease);
+  padding-block: 0.95rem;
+  transition: color 0.18s var(--ease-io), border-color 0.18s var(--ease-io);
 }
 
 .secondary:hover {

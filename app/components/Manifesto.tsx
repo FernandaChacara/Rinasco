@@ -5,9 +5,9 @@ export function Manifesto() {
     <section className={styles.section} id="metodo">
       <div className="container">
         <div className={styles.grid}>
-          <p className={`${styles.quote} display`} data-reveal>
+          <h2 className={`${styles.quote} display`} data-reveal>
             Não vendemos estadias. Preservamos origens.
-          </p>
+          </h2>
           <p className={styles.body} data-reveal>
             Cada residência da coleção é escolhida por seu caráter, não por
             sua disponibilidade. Antes de qualquer contato, você percorre o

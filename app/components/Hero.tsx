@@ -8,24 +8,24 @@ export function Hero() {
       <div className="container">
         <div className={styles.grid}>
           <div>
-            <p className={`${styles.kicker} kicker`} data-reveal>
+            <p className={`${styles.kicker} kicker`}>
               <span className="rule" /> Coleção privada — Lote nº 001
             </p>
-            <h1 className={`${styles.headline} display`} data-reveal>
+            <h1 className={`${styles.headline} display`}>
               Cada casa carrega uma origem que não se repete.
             </h1>
-            <p className={styles.sub} data-reveal>
+            <p className={styles.sub}>
               A Rinasco cataloga residências de caráter raro e as apresenta em
               um ambiente imersivo em 3D — para quem já sabe reconhecer o que
               é, de fato, insubstituível.
             </p>
-            <div className={styles.meta} data-reveal>
+            <div className={styles.meta}>
               <span>Localização reservada</span>
               <span>6 ambientes</span>
               <span>Vista permanente</span>
               <span>Origem 1978</span>
             </div>
-            <div className={styles.actions} data-reveal>
+            <div className={styles.actions}>
               <a className={styles.primary} href="#contato">
                 Solicitar acesso privado
               </a>

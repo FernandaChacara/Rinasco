@@ -1,10 +1,17 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 
 export function ScrollFx({ totalLots }: { totalLots: number }) {
   const [current, setCurrent] = useState(1);
   const [scrolled, setScrolled] = useState(false);
+
+  // Arm the reveal system only once JS is actually running. Content stays
+  // visible by default (see globals.css) until this class exists, so a
+  // failed or slow script never hides anything.
+  useLayoutEffect(() => {
+    document.documentElement.classList.add("reveal-armed");
+  }, []);
 
   useEffect(() => {
     const revealTargets = Array.from(document.querySelectorAll("[data-reveal]"));

@@ -81,15 +81,21 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  margin-top: 1.5rem;
+  margin-top: 0.75rem;
   font-size: 0.72rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   text-decoration: none;
   color: var(--text-on-light);
   border-bottom: 1px solid var(--brass);
-  padding-bottom: 0.15rem;
+  padding-block: 0.95rem 0.15rem;
   width: fit-content;
+  transition: color 0.18s var(--ease-io), border-color 0.18s var(--ease-io);
+}
+
+.link:hover {
+  color: color-mix(in srgb, var(--brass) 70%, var(--ink-deep));
+  border-color: color-mix(in srgb, var(--brass) 70%, var(--ink-deep));
 }
 
 @media (min-width: 720px) {
