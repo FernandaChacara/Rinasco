@@ -8,8 +8,123 @@
   position: relative;
 }
 
+/* story section: below the full-bleed gallery on the same scrolling page —
+   unified light theme (matches the sidebar), split into text + big photo. */
+.story {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  min-height: 100dvh;
+  background: var(--sand);
+}
+
+.storyText {
+  padding: clamp(3rem, 8vh, 6rem) clamp(1.5rem, 4vw, 3rem);
+  color: var(--text-on-light);
+  border-left: 1px solid var(--paper-line);
+}
+
+.timelineLabel {
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--brass);
+}
+
+.timeline {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--text-on-light-muted);
+}
+
+.text {
+  margin-top: clamp(2rem, 6vh, 3.5rem);
+  max-width: 42rem;
+  display: grid;
+  gap: 1.35rem;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--text-on-light-muted);
+}
+
+.photoRow {
+  margin-top: clamp(2.5rem, 7vh, 4rem);
+  display: flex;
+  gap: 0.75rem;
+  max-width: 42rem;
+}
+
+.photoItem {
+  position: relative;
+  flex: 1 1 0;
+  height: 150px;
+}
+
+.photoItem img {
+  object-fit: cover;
+}
+
+.storyImage {
+  position: relative;
+}
+
+@media (max-width: 1100px) {
+  .story {
+    grid-template-columns: 1fr;
+  }
+
+  .storyImage {
+    aspect-ratio: 16 / 9;
+  }
+}
+
 @media (max-width: 900px) {
   .layout {
     grid-template-columns: 1fr;
   }
+}
+
+/* transition footer at the end of Screen 3's fullscreen gallery */
+.nextProject {
+  background: var(--ink-deep);
+  color: var(--text-on-dark);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: clamp(1.5rem, 4vw, 2.5rem) clamp(1.5rem, 5vw, 3rem);
+}
+
+.allWork {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--text-on-dark);
+  opacity: 0.85;
+  transition: opacity 0.18s var(--ease-io);
+}
+
+.allWork:hover {
+  opacity: 1;
+}
+
+.nextLink {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.35rem;
+  text-decoration: none;
+  color: var(--text-on-dark);
+  text-align: right;
+}
+
+.nextLabel {
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--brass-bright);
+}
+
+.nextName {
+  font-size: clamp(1.3rem, 3vw, 1.9rem);
 }

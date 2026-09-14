@@ -19,11 +19,9 @@ const facts = (property: Property) => {
 export function PropertySidebar({
   breadcrumb,
   property,
-  activeTab,
 }: {
   breadcrumb: string;
   property?: Property;
-  activeTab?: "fotos" | "sobre";
 }) {
   return (
     <aside className={styles.sidebar}>
@@ -39,21 +37,6 @@ export function PropertySidebar({
           <p className={styles.subMeta}>
             {property.year} · {property.category}
           </p>
-
-          <nav className={styles.tabs}>
-            <Link
-              href={`/propriedades/${property.slug}`}
-              data-active={activeTab === "fotos"}
-            >
-              Fotos
-            </Link>
-            <Link
-              href={`/propriedades/${property.slug}/sobre`}
-              data-active={activeTab === "sobre"}
-            >
-              Sobre
-            </Link>
-          </nav>
 
           <dl className={styles.facts}>
             {facts(property).map((row) => (

@@ -39,28 +39,6 @@
   color: var(--text-on-light-muted);
 }
 
-.tabs {
-  margin-top: 1.75rem;
-  display: flex;
-  gap: 1.25rem;
-}
-
-.tabs a {
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: var(--text-on-light-muted);
-  padding-bottom: 0.3rem;
-  border-bottom: 1px solid transparent;
-  transition: color 0.18s var(--ease-io), border-color 0.18s var(--ease-io);
-}
-
-.tabs a[data-active="true"] {
-  color: var(--text-on-light);
-  border-bottom-color: var(--brass);
-}
-
 .facts {
   margin-top: clamp(2rem, 6vh, 3rem);
   display: grid;
