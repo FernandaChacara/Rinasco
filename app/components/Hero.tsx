@@ -64,6 +64,7 @@ export function Hero() {
           duration: 0.6,
           ease: "power3.out",
           stagger: 0.05,
+          clearProps: "opacity,transform",
         });
       };
 
