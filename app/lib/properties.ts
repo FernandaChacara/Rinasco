@@ -61,6 +61,58 @@ export const properties: Property[] = [
       { src: "/property-01/bedroom-twin-blue-seahorse.jpg", alt: "Quarto twin com parede azul-clara e motivo de cavalo-marinho" },
     ],
   },
+  {
+    // Facts below marked "A confirmar" are placeholders — the user hasn't
+    // given real numbers yet. quartos/tipologia are a count from the photos
+    // themselves (3 distinct sleeping rooms), not invented.
+    slug: "apartamento-caparica",
+    name: "Apartamento Caparica",
+    year: "A confirmar",
+    category: "Residencial",
+    status: "Disponível",
+    area: "A confirmar",
+    location: "Costa da Caparica",
+    price: "Sob consulta",
+    tipologia: "T3",
+    quartos: "3",
+    timeline: "A confirmar",
+    description: [
+      "O apartamento fica num prédio residencial em tom salmão, com as janelas redondas características da fachada, a poucos minutos da praia. A sala reúne lareira, estantes de madeira embutidas e acesso direto à varanda, com vista para as colinas e os telhados da vizinhança.",
+      "A cozinha conserva os armários originais em madeira e a bancada em granito. Os três quartos têm roupeiros embutidos e roupa de cama em tons de azul; um deles, com dois sofás-cama, serve tanto de quarto extra quanto de sala de repouso.",
+      "O banheiro tem banheira de hidromassagem, e o prédio conta com elevador e hall de entrada em mármore.",
+    ],
+    gallery: [
+      { src: "/property-02/living-room-fireplace.jpg", alt: "Sala de estar com lareira, estantes de madeira e poltronas listradas" },
+      { src: "/property-02/living-room-sofa.jpg", alt: "Sala de estar com sofá branco e almofadas vermelhas" },
+      { src: "/property-02/living-room-fireplace-2.jpg", alt: "Sala de estar, outro ângulo, com mesa de jantar ao fundo" },
+      { src: "/property-02/dining-balcony-door.jpg", alt: "Sala de jantar com estante de madeira e porta de vidro para a varanda" },
+      { src: "/property-02/kitchen-orange.jpg", alt: "Cozinha com armários em madeira laranja e bancada de granito" },
+      { src: "/property-02/kitchen-fridge.jpg", alt: "Cozinha com geladeira e toalha de mesa quadriculada" },
+      { src: "/property-02/kitchen-entry.jpg", alt: "Entrada da cozinha com pia e bancada de granito" },
+      { src: "/property-02/balcony-wood-table.jpg", alt: "Varanda com mesa e bancos de madeira, vista para os pinheiros" },
+      { src: "/property-02/balcony-chairs.jpg", alt: "Varanda com cadeiras dobráveis e vista para o morro" },
+      { src: "/property-02/balcony-chairs-2.jpg", alt: "Varanda com cadeiras dobráveis, outro ângulo" },
+      { src: "/property-02/bedroom-1.jpg", alt: "Quarto com roupa de cama azul e cômoda de madeira" },
+      { src: "/property-02/bedroom-1-nightstand.jpg", alt: "Detalhe do criado-mudo de mármore e cortina" },
+      { src: "/property-02/bedroom-1-headboard.jpg", alt: "Cabeceira da cama com almofadas azuis simétricas" },
+      { src: "/property-02/bedroom-2.jpg", alt: "Quarto com roupeiro embutido e roupa de cama azul" },
+      { src: "/property-02/bedroom-2-detail.jpg", alt: "Quarto, detalhe do roupeiro com portas de vidro fosco" },
+      { src: "/property-02/twin-room.jpg", alt: "Quarto com dois sofás-cama listrados e pufes vermelhos" },
+      { src: "/property-02/twin-room-hallway.jpg", alt: "Quarto de sofás-cama visto a partir do corredor" },
+      { src: "/property-02/hallway.jpg", alt: "Corredor com quadro e portas para os quartos" },
+      { src: "/property-02/hallway-jacuzzi.jpg", alt: "Corredor com vista para a banheira de hidromassagem" },
+      { src: "/property-02/bathroom-jacuzzi.jpg", alt: "Banheiro com banheira de hidromassagem e armário de madeira" },
+      { src: "/property-02/building-facade.jpg", alt: "Fachada do prédio em tom salmão com janelas redondas" },
+      { src: "/property-02/building-lobby.jpg", alt: "Hall de entrada do prédio com elevador e escada" },
+      { src: "/property-02/street-view.jpg", alt: "Vista da rua a partir da varanda" },
+      { src: "/property-02/street-view-2.jpg", alt: "Vista da rua, outro ângulo" },
+    ],
+    storyPhotos: [
+      { src: "/property-02/living-room-fireplace.jpg", alt: "Sala de estar com lareira, estantes de madeira e poltronas listradas" },
+      { src: "/property-02/balcony-wood-table.jpg", alt: "Varanda com mesa e bancos de madeira, vista para os pinheiros" },
+      { src: "/property-02/bathroom-jacuzzi.jpg", alt: "Banheiro com banheira de hidromassagem e armário de madeira" },
+    ],
+  },
 ];
 
 export function getProperty(slug: string) {
