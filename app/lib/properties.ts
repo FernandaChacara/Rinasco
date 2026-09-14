@@ -84,10 +84,10 @@ export const properties: Property[] = [
       "O banheiro tem banheira de hidromassagem, e o prédio conta com elevador e hall de entrada em mármore.",
     ],
     gallery: [
+      { src: "/property-02/dining-balcony-door.jpg", alt: "Sala de jantar com estante de madeira e porta de vidro para a varanda" },
       { src: "/property-02/living-room-fireplace.jpg", alt: "Sala de estar com lareira, estantes de madeira e poltronas listradas" },
       { src: "/property-02/living-room-sofa.jpg", alt: "Sala de estar com sofá branco e almofadas vermelhas" },
       { src: "/property-02/living-room-fireplace-2.jpg", alt: "Sala de estar, outro ângulo, com mesa de jantar ao fundo" },
-      { src: "/property-02/dining-balcony-door.jpg", alt: "Sala de jantar com estante de madeira e porta de vidro para a varanda" },
       { src: "/property-02/kitchen-orange.jpg", alt: "Cozinha com armários em madeira laranja e bancada de granito" },
       { src: "/property-02/kitchen-fridge.jpg", alt: "Cozinha com geladeira e toalha de mesa quadriculada" },
       { src: "/property-02/kitchen-entry.jpg", alt: "Entrada da cozinha com pia e bancada de granito" },
