@@ -36,12 +36,25 @@ export default async function PropertyDetailPage({
   const currentIndex = properties.findIndex((p) => p.slug === property.slug);
   const nextProperty = properties[(currentIndex + 1) % properties.length];
 
+  // Screen 3's gallery starts on a different photo than the Screen 1 cover,
+  // so scrolling into the fullscreen gallery doesn't just repeat it.
+  const fullscreenPhotos = [...property.gallery.slice(1), property.gallery[0]];
+
   return (
     <>
     <div className={styles.layout}>
       <PropertySidebar breadcrumb="Propriedades / Residencial" property={property} />
       <div className={styles.right}>
-        <PropertyGallery photos={property.gallery} />
+        <div className={styles.cover}>
+          <Image
+            src={property.gallery[0].src}
+            alt={property.gallery[0].alt}
+            fill
+            priority
+            sizes="(max-width: 900px) 100vw, 78vw"
+            className={styles.coverImage}
+          />
+        </div>
 
         <div className={styles.story}>
           <div className={styles.storyText}>
@@ -75,8 +88,8 @@ export default async function PropertyDetailPage({
       </div>
     </div>
 
-    {/* Screen 3: fullscreen gallery, no sidebar — the same photos, full width */}
-    <PropertyGallery photos={property.gallery} />
+    {/* Screen 3: fullscreen gallery, no sidebar — starts on a different photo than the cover */}
+    <PropertyGallery photos={fullscreenPhotos} />
 
     <div className={styles.nextProject}>
       <Link href="/propriedades" className={styles.allWork}>

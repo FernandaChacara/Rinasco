@@ -8,6 +8,24 @@
   position: relative;
 }
 
+/* Screen 1: just the cover photo, static — no thumbnails/arrows here,
+   that interaction lives in Screen 3's fullscreen gallery. */
+.cover {
+  position: relative;
+  height: 100dvh;
+  background: var(--ink-deep);
+}
+
+.coverImage {
+  object-fit: cover;
+}
+
+@media (max-width: 900px) {
+  .cover {
+    height: 60vh;
+  }
+}
+
 /* story section: below the full-bleed gallery on the same scrolling page —
    unified light theme (matches the sidebar), split into text + big photo. */
 .story {
