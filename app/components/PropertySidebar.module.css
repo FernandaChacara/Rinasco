@@ -18,12 +18,27 @@
   color: inherit;
 }
 
-.breadcrumb {
+.topRow {
   margin-top: clamp(2.5rem, 8vh, 4.5rem);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.breadcrumb {
   font-size: 0.68rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--text-on-light-muted);
+}
+
+.menuWord {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--text-on-light);
 }
 
 .name {
@@ -78,5 +93,17 @@
   .sidebar {
     position: static;
     height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .facts {
+    gap: 1.75rem;
+  }
+
+  .factRow {
+    border-top: none;
+    padding-top: 0;
+    gap: 0.4rem;
   }
 }

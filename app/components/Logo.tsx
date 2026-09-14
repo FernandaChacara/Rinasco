@@ -1,6 +1,12 @@
 import styles from "./Logo.module.css";
 
-export function Logo({ full = false }: { full?: boolean }) {
+export function Logo({
+  full = false,
+  hideWordOnMobile = false,
+}: {
+  full?: boolean;
+  hideWordOnMobile?: boolean;
+}) {
   return (
     <span className={styles.logo}>
       <svg
@@ -25,7 +31,7 @@ export function Logo({ full = false }: { full?: boolean }) {
           strokeLinejoin="round"
         />
       </svg>
-      <span className={styles.word}>
+      <span className={`${styles.word} ${hideWordOnMobile ? styles.wordHideOnMobile : ""}`}>
         <span className={styles.line1}>Welcome Home</span>
         {full && <span className={styles.line2}>Properties</span>}
       </span>

@@ -26,10 +26,17 @@ export function PropertySidebar({
   return (
     <aside className={styles.sidebar}>
       <Link href="/" className={styles.logo} aria-label="Welcome Home Properties">
-        <Logo full />
+        <Logo full hideWordOnMobile />
       </Link>
 
-      <p className={styles.breadcrumb}>{breadcrumb}</p>
+      <div className={styles.topRow}>
+        <p className={styles.breadcrumb}>{breadcrumb}</p>
+        {property && (
+          <Link href="/" className={styles.menuWord}>
+            Menu
+          </Link>
+        )}
+      </div>
 
       {property ? (
         <>
