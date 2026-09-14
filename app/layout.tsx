@@ -17,7 +17,7 @@ const ui = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Rinasco",
+  title: "Welcome Home Properties",
   description:
     "Casas de temporada em Portugal, apresentadas com a mesma clareza de uma boa estadia: sem ruído, sem exagero, só o essencial de cada espaço.",
 };

@@ -11,13 +11,13 @@
 }
 
 .logo {
-  font-family: var(--font-display), Georgia, serif;
-  font-size: 1.05rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: inherit;
+  display: block;
   width: fit-content;
+}
+
+.logo img {
+  height: 3.2rem;
+  width: auto;
 }
 
 .breadcrumb {

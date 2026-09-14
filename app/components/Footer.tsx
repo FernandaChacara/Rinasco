@@ -18,7 +18,7 @@ const columns = [
   {
     heading: "Contacto",
     links: [
-      { href: "mailto:contato@rinasco.com", label: "contato@rinasco.com" },
+      { href: "mailto:contato@welcomehomeproperties.com", label: "contato@welcomehomeproperties.com" },
       { href: "tel:+351000000000", label: "+351 000 000 000" },
       { href: "#", label: "Instagram" },
     ],
@@ -50,7 +50,7 @@ export function Footer() {
         </div>
 
         <div className={styles.bottom}>
-          <span>© {new Date().getFullYear()} Rinasco</span>
+          <span>© {new Date().getFullYear()} Welcome Home Properties</span>
           <span>Imobiliária de Luxo</span>
           <span>Portugal</span>
         </div>

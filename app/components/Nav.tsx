@@ -2,6 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
+import Image from "next/image";
+import Link from "next/link";
 import styles from "./Nav.module.css";
 
 const links = [
@@ -84,7 +86,9 @@ export function Nav() {
         </span>
       </button>
 
-      <span className={styles.mark}>Rinasco</span>
+      <Link href="/" className={styles.mark} aria-label="Welcome Home Properties">
+        <Image src="/brand/logo-dark.png" alt="Welcome Home Properties" width={899} height={725} priority />
+      </Link>
 
       <a className={styles.utility} href="/propriedades" aria-label="Ver propriedades">
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -123,7 +127,7 @@ export function Nav() {
             ))}
           </nav>
           <div className={styles.panelFoot}>
-            <span>contato@rinasco.com</span>
+            <span>contato@welcomehomeproperties.com</span>
             <span>Portugal</span>
           </div>
         </div>

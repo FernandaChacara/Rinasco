@@ -19,7 +19,7 @@
 }
 
 .nav:global(.is-scrolled) {
-  background: rgba(27, 38, 33, 0.88);
+  background: rgba(23, 17, 14, 0.88);
   backdrop-filter: blur(10px);
   border-bottom-color: rgba(244, 239, 227, 0.12);
   padding-block: 1rem;
@@ -29,10 +29,13 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  font-family: var(--font-display), Georgia, serif;
-  font-size: 1.1rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+}
+
+.mark img {
+  height: 2.4rem;
+  width: auto;
 }
 
 .toggle,

@@ -5,8 +5,8 @@ import { properties } from "../lib/properties";
 import styles from "./listing.module.css";
 
 export const metadata = {
-  title: "Propriedades — Rinasco",
-  description: "A coleção de casas de temporada Rinasco em Portugal.",
+  title: "Propriedades — Welcome Home Properties",
+  description: "A coleção de casas de temporada Welcome Home Properties em Portugal.",
 };
 
 export default function PropertiesPage() {

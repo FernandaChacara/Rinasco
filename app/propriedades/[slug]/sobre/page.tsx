@@ -15,7 +15,11 @@ export async function generateMetadata({
 }) {
   const { slug } = await params;
   const property = getProperty(slug);
-  return { title: property ? `${property.name} — Sobre — Rinasco` : "Rinasco" };
+  return {
+    title: property
+      ? `${property.name} — Sobre — Welcome Home Properties`
+      : "Welcome Home Properties",
+  };
 }
 
 export default async function PropertyStoryPage({
