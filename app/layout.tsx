@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Manrope } from "next/font/google";
+import { Fraunces, Manrope, Syne } from "next/font/google";
 import "./globals.css";
 
 const display = Fraunces({
@@ -16,6 +16,12 @@ const ui = Manrope({
   weight: ["400", "500", "600"],
 });
 
+const logo = Syne({
+  variable: "--font-logo",
+  subsets: ["latin"],
+  weight: ["600", "700"],
+});
+
 export const metadata: Metadata = {
   title: "Welcome Home Properties",
   description:
@@ -30,7 +36,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${display.variable} ${ui.variable}`}
+      className={`${display.variable} ${ui.variable} ${logo.variable}`}
       suppressHydrationWarning
     >
       <body>
