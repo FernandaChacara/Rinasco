@@ -39,13 +39,13 @@ export const properties: Property[] = [
       "Não há encenação. Cada fotografia mostra o espaço como ele é hoje, para que quem reservar saiba exatamente o que vai encontrar.",
     ],
     gallery: [
+      { src: "/property-01/game-room-foosball.jpg", alt: "Sala de jogos com mesa de matraquilhos" },
       { src: "/property-01/living-room-art.jpg", alt: "Sala de estar com sofá e arte de parede em folhagem" },
       { src: "/property-01/kitchen-shelves.jpg", alt: "Prateleiras da cozinha com plantas e galo de Barcelos" },
       { src: "/property-01/kitchen-island.jpg", alt: "Ilha da cozinha com bancos e luminárias suspensas" },
       { src: "/property-01/garden.jpg", alt: "Jardim com banco de ferro branco e trepadeiras" },
       { src: "/property-01/patio-bbq.jpg", alt: "Pátio coberto com churrasqueira de alvenaria" },
       { src: "/property-01/lounge-tv.jpg", alt: "Sala de estar ampla com sofá cinza e móvel de TV" },
-      { src: "/property-01/game-room-foosball.jpg", alt: "Sala de jogos com mesa de matraquilhos" },
       { src: "/property-01/bedroom-ornate-teal.jpg", alt: "Quarto com cabeceira entalhada branca e almofadas em verde-água" },
       { src: "/property-01/bedroom-purple-balcony.jpg", alt: "Quarto com almofada roxa e varanda com vista" },
       { src: "/property-01/bedroom-purple-wardrobe.jpg", alt: "Quarto com roupeiro branco entalhado e manta em tons roxos" },
@@ -57,7 +57,7 @@ export const properties: Property[] = [
     ],
     storyPhotos: [
       { src: "/property-01/living-room-art.jpg", alt: "Sala de estar com sofá e arte de parede em folhagem" },
-      { src: "/property-01/patio-bbq.jpg", alt: "Pátio coberto com churrasqueira de alvenaria" },
+      { src: "/property-01/kitchen-island.jpg", alt: "Ilha da cozinha com bancos e luminárias suspensas" },
       { src: "/property-01/bedroom-twin-blue-seahorse.jpg", alt: "Quarto twin com parede azul-clara e motivo de cavalo-marinho" },
     ],
   },
