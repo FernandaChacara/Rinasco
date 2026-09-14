@@ -2,8 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
-import Image from "next/image";
 import Link from "next/link";
+import { Logo } from "./Logo";
 import styles from "./Nav.module.css";
 
 const links = [
@@ -87,7 +87,7 @@ export function Nav() {
       </button>
 
       <Link href="/" className={styles.mark} aria-label="Welcome Home Properties">
-        <Image src="/brand/logo-dark.png" alt="Welcome Home Properties" width={899} height={725} priority />
+        <Logo />
       </Link>
 
       <a className={styles.utility} href="/propriedades" aria-label="Ver propriedades">

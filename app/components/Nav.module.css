@@ -31,11 +31,9 @@
   transform: translateX(-50%);
   display: flex;
   align-items: center;
-}
-
-.mark img {
-  height: 2.4rem;
-  width: auto;
+  font-size: 1.05rem;
+  text-decoration: none;
+  color: inherit;
 }
 
 .toggle,

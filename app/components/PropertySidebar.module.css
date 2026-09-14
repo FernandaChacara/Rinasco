@@ -13,11 +13,9 @@
 .logo {
   display: block;
   width: fit-content;
-}
-
-.logo img {
-  height: 3.2rem;
-  width: auto;
+  font-size: 1.35rem;
+  text-decoration: none;
+  color: inherit;
 }
 
 .breadcrumb {

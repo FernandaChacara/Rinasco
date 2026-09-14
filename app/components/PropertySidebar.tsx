@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import { Logo } from "./Logo";
 import styles from "./PropertySidebar.module.css";
 import type { Property } from "../lib/properties";
 
@@ -28,7 +28,7 @@ export function PropertySidebar({
   return (
     <aside className={styles.sidebar}>
       <Link href="/" className={styles.logo} aria-label="Welcome Home Properties">
-        <Image src="/brand/logo-light.png" alt="Welcome Home Properties" width={899} height={725} priority />
+        <Logo full />
       </Link>
 
       <p className={styles.breadcrumb}>{breadcrumb}</p>
