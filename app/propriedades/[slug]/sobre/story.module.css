@@ -2,25 +2,26 @@
   display: grid;
   grid-template-columns: minmax(16rem, 22vw) 1.3fr 1fr;
   min-height: 100dvh;
-  background: var(--ink);
+  background: var(--sand);
 }
 
 .story {
   padding: clamp(3rem, 8vh, 6rem) clamp(1.5rem, 4vw, 3rem);
-  color: var(--text-on-dark);
+  color: var(--text-on-light);
+  border-left: 1px solid var(--paper-line);
 }
 
 .timelineLabel {
   font-size: 0.68rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--brass-bright);
+  color: var(--brass);
 }
 
 .timeline {
   margin-top: 0.5rem;
   font-size: 0.95rem;
-  color: var(--text-on-dark-muted);
+  color: var(--text-on-light-muted);
 }
 
 .text {
@@ -30,7 +31,7 @@
   gap: 1.35rem;
   font-size: 1rem;
   line-height: 1.75;
-  color: var(--text-on-dark-muted);
+  color: var(--text-on-light-muted);
 }
 
 .photoRow {
