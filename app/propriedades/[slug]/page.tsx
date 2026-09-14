@@ -65,8 +65,8 @@ export default async function PropertyDetailPage({
 
           <div className={styles.storyImage}>
             <Image
-              src={property.gallery[0].src}
-              alt={property.gallery[0].alt}
+              src={property.storyImage.src}
+              alt={property.storyImage.alt}
               fill
               sizes="(max-width: 1100px) 100vw, 32vw"
             />

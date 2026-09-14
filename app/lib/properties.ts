@@ -18,6 +18,7 @@ export type Property = {
   description: string[];
   gallery: PropertyPhoto[];
   storyPhotos: PropertyPhoto[];
+  storyImage: PropertyPhoto;
 };
 
 export const properties: Property[] = [
@@ -62,6 +63,7 @@ export const properties: Property[] = [
       { src: "/property-01/kitchen-island.jpg", alt: "Ilha da cozinha com bancos e luminárias suspensas" },
       { src: "/property-01/bedroom-twin-blue-seahorse.jpg", alt: "Quarto twin com parede azul-clara e motivo de cavalo-marinho" },
     ],
+    storyImage: { src: "/property-01/patio-bbq.jpg", alt: "Pátio coberto com churrasqueira de alvenaria" },
   },
   {
     // Facts below marked "A confirmar" are placeholders — the user hasn't
@@ -96,6 +98,7 @@ export const properties: Property[] = [
       { src: "/property-02/dining-balcony-door.jpg", alt: "Sala de jantar com estante de madeira e porta de vidro para a varanda" },
       { src: "/property-02/bedroom-1-headboard.jpg", alt: "Cabeceira da cama com almofadas azuis simétricas" },
     ],
+    storyImage: { src: "/property-02/kitchen-orange.jpg", alt: "Cozinha com armários em madeira laranja e bancada de granito" },
   },
 ];
 
