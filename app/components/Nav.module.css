@@ -16,6 +16,11 @@
      alongside the animated background/border. */
   transition: background 0.25s var(--ease-io), border-color 0.25s var(--ease-io),
     color 0.25s var(--ease-io);
+  pointer-events: none;
+}
+
+.nav > * {
+  pointer-events: auto;
 }
 
 .nav:global(.is-scrolled) {

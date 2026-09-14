@@ -40,6 +40,8 @@ export const properties: Property[] = [
     ],
     gallery: [
       { src: "/property-01/game-room-foosball.jpg", alt: "Sala de jogos com mesa de matraquilhos" },
+      { src: "/property-01/dining-kitchen-open.jpg", alt: "Sala de jantar com lustre de rattan e cozinha aberta ao fundo" },
+      { src: "/property-01/dining-room-fireplace.jpg", alt: "Sala de jantar com lareira de pedra e móvel de TV" },
       { src: "/property-01/living-room-art.jpg", alt: "Sala de estar com sofá e arte de parede em folhagem" },
       { src: "/property-01/kitchen-shelves.jpg", alt: "Prateleiras da cozinha com plantas e galo de Barcelos" },
       { src: "/property-01/kitchen-island.jpg", alt: "Ilha da cozinha com bancos e luminárias suspensas" },
