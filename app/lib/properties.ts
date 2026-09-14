@@ -49,6 +49,8 @@ export const properties: Property[] = [
       { src: "/property-01/dining-open.jpg", alt: "Sala de jantar aberta com escadaria ao fundo" },
       { src: "/property-01/dining-room.jpg", alt: "Sala de jantar com mesa de madeira e cadeiras brancas" },
       { src: "/property-01/kitchen.jpg", alt: "Cozinha com armários em madeira clara" },
+      { src: "/property-01/kitchen-shelves.jpg", alt: "Prateleiras da cozinha com plantas e galo de Barcelos" },
+      { src: "/property-01/kitchen-island.jpg", alt: "Ilha da cozinha com bancos e luminárias suspensas" },
       { src: "/property-01/bedroom.jpg", alt: "Quarto principal, paredes em verde-água e cama em ferro forjado" },
       { src: "/property-01/bedroom-purple.jpg", alt: "Quarto com detalhes em tom lilás e janela em arco" },
       { src: "/property-01/bedroom-white-wardrobe.jpg", alt: "Quarto com roupeiro branco entalhado e cama de casal" },
