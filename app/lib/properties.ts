@@ -122,13 +122,13 @@ export const properties: Property[] = [
       "No terraço da cobertura, grama sintética, chuveiro externo e espaço reservado para espreguiçadeiras completam a área de lazer exterior.",
     ],
     gallery: [
-      { src: "/property-03/rooftop-terrace.jpg", alt: "Terraço na cobertura com grama sintética e chuveiro externo" },
       { src: "/property-03/patio-bbq-covered.jpg", alt: "Pátio coberto com churrasqueira de alvenaria" },
+      { src: "/property-03/rooftop-terrace.jpg", alt: "Terraço na cobertura com grama sintética e chuveiro externo" },
     ],
     storyPhotos: [
-      { src: "/property-03/rooftop-terrace.jpg", alt: "Terraço na cobertura com grama sintética e chuveiro externo" },
+      { src: "/property-03/patio-bbq-covered.jpg", alt: "Pátio coberto com churrasqueira de alvenaria" },
     ],
-    storyImage: { src: "/property-03/patio-bbq-covered.jpg", alt: "Pátio coberto com churrasqueira de alvenaria" },
+    storyImage: { src: "/property-03/rooftop-terrace.jpg", alt: "Terraço na cobertura com grama sintética e chuveiro externo" },
   },
   {
     // Facts below marked "A confirmar" are placeholders — the user hasn't
@@ -148,9 +148,9 @@ export const properties: Property[] = [
       "O quarto tem cômodas brancas e roupa de cama em tons terracota.",
     ],
     gallery: [
+      { src: "/property-04/kitchen-window.jpg", alt: "Cozinha branca com copa junto à janela e acesso à lavandaria" },
       { src: "/property-04/living-room-fireplace.jpg", alt: "Sala de estar com lareira de canto e sofás bege" },
       { src: "/property-04/living-room-armchairs.jpg", alt: "Poltronas e sofá bege com almofadas coloridas" },
-      { src: "/property-04/kitchen-window.jpg", alt: "Cozinha branca com copa junto à janela e acesso à lavandaria" },
       { src: "/property-04/kitchen-granite-counter.jpg", alt: "Bancada de granito com armários brancos entalhados" },
       { src: "/property-04/bedroom-terracotta-pillows.jpg", alt: "Quarto com cômodas brancas e almofadas em tons terracota" },
     ],
