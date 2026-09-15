@@ -148,18 +148,18 @@ export const properties: Property[] = [
       "O quarto tem cômodas brancas e roupa de cama em tons terracota.",
     ],
     gallery: [
-      { src: "/property-04/kitchen-window.jpg", alt: "Cozinha branca com copa junto à janela e acesso à lavandaria" },
+      { src: "/property-04/kitchen-granite-counter.jpg", alt: "Bancada de granito com armários brancos entalhados" },
       { src: "/property-04/living-room-fireplace.jpg", alt: "Sala de estar com lareira de canto e sofás bege" },
       { src: "/property-04/living-room-armchairs.jpg", alt: "Poltronas e sofá bege com almofadas coloridas" },
-      { src: "/property-04/kitchen-granite-counter.jpg", alt: "Bancada de granito com armários brancos entalhados" },
+      { src: "/property-04/kitchen-window.jpg", alt: "Cozinha branca com copa junto à janela e acesso à lavandaria" },
       { src: "/property-04/bedroom-terracotta-pillows.jpg", alt: "Quarto com cômodas brancas e almofadas em tons terracota" },
     ],
     storyPhotos: [
+      { src: "/property-04/living-room-fireplace.jpg", alt: "Sala de estar com lareira de canto e sofás bege" },
       { src: "/property-04/living-room-armchairs.jpg", alt: "Poltronas e sofá bege com almofadas coloridas" },
-      { src: "/property-04/kitchen-window.jpg", alt: "Cozinha branca com copa junto à janela e acesso à lavandaria" },
       { src: "/property-04/bedroom-terracotta-pillows.jpg", alt: "Quarto com cômodas brancas e almofadas em tons terracota" },
     ],
-    storyImage: { src: "/property-04/kitchen-granite-counter.jpg", alt: "Bancada de granito com armários brancos entalhados" },
+    storyImage: { src: "/property-04/kitchen-window.jpg", alt: "Cozinha branca com copa junto à janela e acesso à lavandaria" },
   },
 ];
 
