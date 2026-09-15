@@ -91,7 +91,11 @@ export const properties: Property[] = [
       { src: "/property-02/balcony-wood-table.jpg", alt: "Varanda com mesa e bancos de madeira, vista para os pinheiros" },
       { src: "/property-02/kitchen-orange.jpg", alt: "Cozinha com armários em madeira laranja e bancada de granito" },
       { src: "/property-02/bedroom-1-headboard.jpg", alt: "Cabeceira da cama com almofadas azuis simétricas" },
+      { src: "/property-02/bedroom-2-blue-pillow.jpg", alt: "Cama com almofada azul e mesa de cabeceira em mármore" },
+      { src: "/property-02/hallway-art.jpg", alt: "Corredor com quadro de arte e vista para dois quartos" },
+      { src: "/property-02/twin-sofa-beds.jpg", alt: "Quarto com dois sofás-cama listrados e vista para a colina" },
       { src: "/property-02/hallway-jacuzzi.jpg", alt: "Corredor com vista para a banheira de hidromassagem" },
+      { src: "/property-02/bathroom-jacuzzi.jpg", alt: "Banheiro com banheira de hidromassagem" },
     ],
     storyPhotos: [
       { src: "/property-02/balcony-wood-table.jpg", alt: "Varanda com mesa e bancos de madeira, vista para os pinheiros" },
@@ -99,6 +103,39 @@ export const properties: Property[] = [
       { src: "/property-02/bedroom-1-headboard.jpg", alt: "Cabeceira da cama com almofadas azuis simétricas" },
     ],
     storyImage: { src: "/property-02/kitchen-orange.jpg", alt: "Cozinha com armários em madeira laranja e bancada de granito" },
+  },
+  {
+    // Facts below marked "A confirmar" are placeholders — the user hasn't
+    // given real numbers yet.
+    slug: "casa-cascais",
+    name: "Casa Cascais",
+    year: "A confirmar",
+    category: "Residencial",
+    status: "Disponível",
+    area: "A confirmar",
+    location: "Cascais",
+    price: "Sob consulta",
+    timeline: "A confirmar",
+    description: [
+      "A sala reúne uma lareira de canto, sofás estofados em bege e um conjunto de almofadas coloridas, com portas de vidro que se abrem para uma varanda com cortinado leve. O ambiente é amplo e recebe luz natural durante todo o dia.",
+      "A cozinha conserva os armários brancos originais, com friso decorativo nos azulejos e bancada em granito; uma copa junto à janela serve de apoio e liga o espaço à área de lavandaria.",
+      "Os quartos têm cômodas brancas e roupa de cama em tons terracota. Do lado de fora, um pátio coberto abriga uma churrasqueira de alvenaria, e no terraço da cobertura há grama sintética, chuveiro externo e espaço para espreguiçadeiras.",
+    ],
+    gallery: [
+      { src: "/property-03/living-room-fireplace.jpg", alt: "Sala de estar com lareira de canto e sofás bege" },
+      { src: "/property-03/living-room-armchairs.jpg", alt: "Poltronas e sofá bege com almofadas coloridas" },
+      { src: "/property-03/kitchen-window.jpg", alt: "Cozinha branca com copa junto à janela e acesso à lavandaria" },
+      { src: "/property-03/kitchen-granite-counter.jpg", alt: "Bancada de granito com armários brancos entalhados" },
+      { src: "/property-03/bedroom-terracotta-pillows.jpg", alt: "Quarto com cômodas brancas e almofadas em tons terracota" },
+      { src: "/property-03/patio-bbq-covered.jpg", alt: "Pátio coberto com churrasqueira de alvenaria" },
+      { src: "/property-03/rooftop-terrace.jpg", alt: "Terraço na cobertura com grama sintética e chuveiro externo" },
+    ],
+    storyPhotos: [
+      { src: "/property-03/kitchen-granite-counter.jpg", alt: "Bancada de granito com armários brancos entalhados" },
+      { src: "/property-03/bedroom-terracotta-pillows.jpg", alt: "Quarto com cômodas brancas e almofadas em tons terracota" },
+      { src: "/property-03/patio-bbq-covered.jpg", alt: "Pátio coberto com churrasqueira de alvenaria" },
+    ],
+    storyImage: { src: "/property-03/rooftop-terrace.jpg", alt: "Terraço na cobertura com grama sintética e chuveiro externo" },
   },
 ];
 
