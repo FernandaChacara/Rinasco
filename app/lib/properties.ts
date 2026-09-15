@@ -106,7 +106,8 @@ export const properties: Property[] = [
   },
   {
     // Facts below marked "A confirmar" are placeholders — the user hasn't
-    // given real numbers yet.
+    // given real numbers yet. Only 2 photos exist for this one so far
+    // (terrace + BBQ patio) — storyPhotos has just 1 entry as a result.
     slug: "casa-cascais",
     name: "Casa Cascais",
     year: "A confirmar",
@@ -117,25 +118,48 @@ export const properties: Property[] = [
     price: "Sob consulta",
     timeline: "A confirmar",
     description: [
-      "A sala reúne uma lareira de canto, sofás estofados em bege e um conjunto de almofadas coloridas, com portas de vidro que se abrem para uma varanda com cortinado leve. O ambiente é amplo e recebe luz natural durante todo o dia.",
-      "A cozinha conserva os armários brancos originais, com friso decorativo nos azulejos e bancada em granito; uma copa junto à janela serve de apoio e liga o espaço à área de lavandaria.",
-      "Os quartos têm cômodas brancas e roupa de cama em tons terracota. Do lado de fora, um pátio coberto abriga uma churrasqueira de alvenaria, e no terraço da cobertura há grama sintética, chuveiro externo e espaço para espreguiçadeiras.",
+      "Um pátio coberto abriga uma churrasqueira de alvenaria, pronta para reuniões ao ar livre mesmo em dias de sol forte.",
+      "No terraço da cobertura, grama sintética, chuveiro externo e espaço reservado para espreguiçadeiras completam a área de lazer exterior.",
     ],
     gallery: [
-      { src: "/property-03/living-room-fireplace.jpg", alt: "Sala de estar com lareira de canto e sofás bege" },
-      { src: "/property-03/living-room-armchairs.jpg", alt: "Poltronas e sofá bege com almofadas coloridas" },
-      { src: "/property-03/kitchen-window.jpg", alt: "Cozinha branca com copa junto à janela e acesso à lavandaria" },
-      { src: "/property-03/kitchen-granite-counter.jpg", alt: "Bancada de granito com armários brancos entalhados" },
-      { src: "/property-03/bedroom-terracotta-pillows.jpg", alt: "Quarto com cômodas brancas e almofadas em tons terracota" },
-      { src: "/property-03/patio-bbq-covered.jpg", alt: "Pátio coberto com churrasqueira de alvenaria" },
       { src: "/property-03/rooftop-terrace.jpg", alt: "Terraço na cobertura com grama sintética e chuveiro externo" },
+      { src: "/property-03/patio-bbq-covered.jpg", alt: "Pátio coberto com churrasqueira de alvenaria" },
     ],
     storyPhotos: [
-      { src: "/property-03/kitchen-granite-counter.jpg", alt: "Bancada de granito com armários brancos entalhados" },
-      { src: "/property-03/bedroom-terracotta-pillows.jpg", alt: "Quarto com cômodas brancas e almofadas em tons terracota" },
-      { src: "/property-03/patio-bbq-covered.jpg", alt: "Pátio coberto com churrasqueira de alvenaria" },
+      { src: "/property-03/rooftop-terrace.jpg", alt: "Terraço na cobertura com grama sintética e chuveiro externo" },
     ],
-    storyImage: { src: "/property-03/rooftop-terrace.jpg", alt: "Terraço na cobertura com grama sintética e chuveiro externo" },
+    storyImage: { src: "/property-03/patio-bbq-covered.jpg", alt: "Pátio coberto com churrasqueira de alvenaria" },
+  },
+  {
+    // Facts below marked "A confirmar" are placeholders — the user hasn't
+    // given real numbers yet. Only 5 photos exist for this one so far.
+    slug: "casa-cascais-sul",
+    name: "Casa Cascais Sul",
+    year: "A confirmar",
+    category: "Residencial",
+    status: "Disponível",
+    area: "A confirmar",
+    location: "Cascais",
+    price: "Sob consulta",
+    timeline: "A confirmar",
+    description: [
+      "A sala reúne uma lareira de canto, sofás estofados em bege e um conjunto de almofadas coloridas, com portas de vidro que se abrem para uma varanda com cortinado leve. O ambiente é amplo e recebe luz natural durante todo o dia.",
+      "A cozinha conserva os armários brancos originais, com friso decorativo nos azulejos e bancada em granito; uma copa junto à janela serve de apoio e liga o espaço à área de lavandaria.",
+      "O quarto tem cômodas brancas e roupa de cama em tons terracota.",
+    ],
+    gallery: [
+      { src: "/property-04/living-room-fireplace.jpg", alt: "Sala de estar com lareira de canto e sofás bege" },
+      { src: "/property-04/living-room-armchairs.jpg", alt: "Poltronas e sofá bege com almofadas coloridas" },
+      { src: "/property-04/kitchen-window.jpg", alt: "Cozinha branca com copa junto à janela e acesso à lavandaria" },
+      { src: "/property-04/kitchen-granite-counter.jpg", alt: "Bancada de granito com armários brancos entalhados" },
+      { src: "/property-04/bedroom-terracotta-pillows.jpg", alt: "Quarto com cômodas brancas e almofadas em tons terracota" },
+    ],
+    storyPhotos: [
+      { src: "/property-04/living-room-armchairs.jpg", alt: "Poltronas e sofá bege com almofadas coloridas" },
+      { src: "/property-04/kitchen-window.jpg", alt: "Cozinha branca com copa junto à janela e acesso à lavandaria" },
+      { src: "/property-04/bedroom-terracotta-pillows.jpg", alt: "Quarto com cômodas brancas e almofadas em tons terracota" },
+    ],
+    storyImage: { src: "/property-04/kitchen-granite-counter.jpg", alt: "Bancada de granito com armários brancos entalhados" },
   },
 ];
 
